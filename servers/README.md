@@ -12,6 +12,11 @@
   chore: # - # вспомогательные изменения (auxiliary changes)
 ```
 
+### To start docker database
+```bash
+  docker-compose up # предварительно изменить .env.example на .env, и изменить поле .env DATABASE_URL под dcoke-compose.yml
+```
+
 ### To instanll all packages
 ```bash
   npm install # or bun install
