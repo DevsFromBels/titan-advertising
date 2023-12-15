@@ -24,7 +24,7 @@ import { EjsAdapter } from "@nestjs-modules/mailer/dist/adapters/ejs.adapter"
 				template: {
 					dir: join(
 						__dirname,
-						"../../../../../../Finance-app/finance-app/servers/email-templates"
+						"../../../../../../pet/finance-app/servers/email-templates"
 					),
 					adapter: new EjsAdapter(),
 					options: {

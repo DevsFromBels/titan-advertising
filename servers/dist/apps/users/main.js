@@ -130,7 +130,7 @@ exports.EmailModule = EmailModule = __decorate([
                         from: "Becodemy",
                     },
                     template: {
-                        dir: (0, path_1.join)(__dirname, "../../../../../../Finance-app/finance-app/servers/email-templates"),
+                        dir: (0, path_1.join)(__dirname, "../../../../../../pet/finance-app/servers/email-templates"),
                         adapter: new ejs_adapter_1.EjsAdapter(),
                         options: {
                             strict: false,
@@ -505,8 +505,8 @@ const common_1 = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
 const config_1 = __webpack_require__(/*! @nestjs/config */ "@nestjs/config");
 const jwt_1 = __webpack_require__(/*! @nestjs/jwt */ "@nestjs/jwt");
 const prisma_service_1 = __webpack_require__(/*! ../../../prisma/prisma.service */ "./prisma/prisma.service.ts");
-const bcrypt = __webpack_require__(/*! bcrypt */ "bcrypt");
 const email_service_1 = __webpack_require__(/*! ./email/email.service */ "./apps/users/src/email/email.service.ts");
+const bcrypt = __webpack_require__(/*! bcrypt */ "bcrypt");
 let UsersService = class UsersService {
     constructor(jwtService, prisma, configService, emailService) {
         this.jwtService = jwtService;

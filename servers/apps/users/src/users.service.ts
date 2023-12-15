@@ -3,8 +3,8 @@ import { ConfigService } from "@nestjs/config"
 import { JwtService, JwtVerifyOptions } from "@nestjs/jwt"
 import { PrismaService } from "../../../prisma/prisma.service"
 import { ActivationDto, LoginDto, RegisterDto } from "./dto/user.dto"
-import * as bcrypt from "bcrypt"
 import { EmailService } from "./email/email.service"
+import * as bcrypt from "bcrypt";
 
 interface UserData {
 	name: string
