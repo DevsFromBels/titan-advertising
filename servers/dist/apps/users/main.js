@@ -43,6 +43,11 @@ __decorate([
     (0, class_validator_1.IsEmail)({}, { message: 'Email is invalid.' }),
     __metadata("design:type", String)
 ], RegisterDto.prototype, "email", void 0);
+__decorate([
+    (0, graphql_1.Field)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Phone Number is required.' }),
+    __metadata("design:type", Number)
+], RegisterDto.prototype, "phone_number", void 0);
 exports.RegisterDto = RegisterDto = __decorate([
     (0, graphql_1.InputType)()
 ], RegisterDto);
@@ -79,6 +84,112 @@ __decorate([
 exports.LoginDto = LoginDto = __decorate([
     (0, graphql_1.InputType)()
 ], LoginDto);
+
+
+/***/ }),
+
+/***/ "./apps/users/src/email/email.module.ts":
+/*!**********************************************!*\
+  !*** ./apps/users/src/email/email.module.ts ***!
+  \**********************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.EmailModule = void 0;
+const common_1 = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
+const email_service_1 = __webpack_require__(/*! ./email.service */ "./apps/users/src/email/email.service.ts");
+const mailer_1 = __webpack_require__(/*! @nestjs-modules/mailer */ "@nestjs-modules/mailer");
+const config_1 = __webpack_require__(/*! @nestjs/config */ "@nestjs/config");
+const path_1 = __webpack_require__(/*! path */ "path");
+const ejs_adapter_1 = __webpack_require__(/*! @nestjs-modules/mailer/dist/adapters/ejs.adapter */ "@nestjs-modules/mailer/dist/adapters/ejs.adapter");
+let EmailModule = class EmailModule {
+};
+exports.EmailModule = EmailModule;
+exports.EmailModule = EmailModule = __decorate([
+    (0, common_1.Global)(),
+    (0, common_1.Module)({
+        imports: [
+            mailer_1.MailerModule.forRootAsync({
+                useFactory: async (config) => ({
+                    transport: {
+                        host: config.get("SMTP_HOST"),
+                        secure: true,
+                        auth: {
+                            user: config.get("SMTP_MAIL"),
+                            pass: config.get("SMTP_PASSWORD"),
+                        },
+                    },
+                    defaults: {
+                        from: "Becodemy",
+                    },
+                    template: {
+                        dir: (0, path_1.join)(__dirname, "../../../../../../Finance-app/finance-app/servers/email-templates"),
+                        adapter: new ejs_adapter_1.EjsAdapter(),
+                        options: {
+                            strict: false,
+                        },
+                    },
+                }),
+                inject: [config_1.ConfigService],
+            }),
+        ],
+        providers: [email_service_1.EmailService],
+        exports: [email_service_1.EmailService]
+    })
+], EmailModule);
+
+
+/***/ }),
+
+/***/ "./apps/users/src/email/email.service.ts":
+/*!***********************************************!*\
+  !*** ./apps/users/src/email/email.service.ts ***!
+  \***********************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var _a;
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.EmailService = void 0;
+const mailer_1 = __webpack_require__(/*! @nestjs-modules/mailer */ "@nestjs-modules/mailer");
+const common_1 = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
+let EmailService = class EmailService {
+    constructor(mailSevice) {
+        this.mailSevice = mailSevice;
+    }
+    async sendMail({ subject, email, name, activationCode, template, }) {
+        await this.mailSevice.sendMail({
+            to: email,
+            subject,
+            template,
+            context: {
+                name,
+                activationCode,
+            },
+        });
+    }
+};
+exports.EmailService = EmailService;
+exports.EmailService = EmailService = __decorate([
+    (0, common_1.Injectable)(),
+    __metadata("design:paramtypes", [typeof (_a = typeof mailer_1.MailerService !== "undefined" && mailer_1.MailerService) === "function" ? _a : Object])
+], EmailService);
 
 
 /***/ }),
@@ -186,7 +297,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var _a, _b;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.LoginResponse = exports.RegisterResponse = exports.ErrorType = void 0;
+exports.LoginResponse = exports.ActivationResponse = exports.RegisterResponse = exports.ErrorType = void 0;
 const graphql_1 = __webpack_require__(/*! @nestjs/graphql */ "@nestjs/graphql");
 const user_entity_1 = __webpack_require__(/*! ../entities/user.entity */ "./apps/users/src/entities/user.entity.ts");
 let ErrorType = class ErrorType {
@@ -207,9 +318,9 @@ let RegisterResponse = class RegisterResponse {
 };
 exports.RegisterResponse = RegisterResponse;
 __decorate([
-    (0, graphql_1.Field)(() => user_entity_1.User, { nullable: true }),
-    __metadata("design:type", Object)
-], RegisterResponse.prototype, "user", void 0);
+    (0, graphql_1.Field)(),
+    __metadata("design:type", String)
+], RegisterResponse.prototype, "activation_token", void 0);
 __decorate([
     (0, graphql_1.Field)(() => ErrorType, { nullable: true }),
     __metadata("design:type", ErrorType)
@@ -217,6 +328,20 @@ __decorate([
 exports.RegisterResponse = RegisterResponse = __decorate([
     (0, graphql_1.ObjectType)()
 ], RegisterResponse);
+let ActivationResponse = class ActivationResponse {
+};
+exports.ActivationResponse = ActivationResponse;
+__decorate([
+    (0, graphql_1.Field)(() => user_entity_1.User),
+    __metadata("design:type", Object)
+], ActivationResponse.prototype, "user", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => ErrorType, { nullable: true }),
+    __metadata("design:type", ErrorType)
+], ActivationResponse.prototype, "error", void 0);
+exports.ActivationResponse = ActivationResponse = __decorate([
+    (0, graphql_1.ObjectType)()
+], ActivationResponse);
 let LoginResponse = class LoginResponse {
 };
 exports.LoginResponse = LoginResponse;
@@ -258,18 +383,23 @@ const config_1 = __webpack_require__(/*! @nestjs/config */ "@nestjs/config");
 const jwt_1 = __webpack_require__(/*! @nestjs/jwt */ "@nestjs/jwt");
 const prisma_service_1 = __webpack_require__(/*! ../../../prisma/prisma.service */ "./prisma/prisma.service.ts");
 const users_resolver_1 = __webpack_require__(/*! ./users.resolver */ "./apps/users/src/users.resolver.ts");
+const email_module_1 = __webpack_require__(/*! ./email/email.module */ "./apps/users/src/email/email.module.ts");
 let UsersModule = class UsersModule {
 };
 exports.UsersModule = UsersModule;
 exports.UsersModule = UsersModule = __decorate([
     (0, common_1.Module)({
         imports: [
+            config_1.ConfigModule.forRoot({
+                isGlobal: true,
+            }),
             graphql_1.GraphQLModule.forRoot({
                 driver: apollo_1.ApolloFederationDriver,
                 autoSchemaFile: {
                     federation: 2,
                 },
             }),
+            email_module_1.EmailModule,
         ],
         controllers: [],
         providers: [
@@ -304,7 +434,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var _a, _b, _c;
+var _a, _b, _c, _d, _e;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.UsersResolver = void 0;
 const graphql_1 = __webpack_require__(/*! @nestjs/graphql */ "@nestjs/graphql");
@@ -318,21 +448,32 @@ let UsersResolver = class UsersResolver {
     }
     async register(registerDto, context) {
         if (!registerDto.email || !registerDto.name || !registerDto.password) {
-            throw new common_1.BadGatewayException("Please fill the all fields.");
+            throw new common_1.BadRequestException("Please fill the all fields.");
         }
-        const user = await this.userService.register(registerDto, context.res);
-        return { user };
+        const { activation_token } = await this.userService.register(registerDto, context.res);
+        return { activation_token };
+    }
+    async activateUser(activationDto, context) {
+        return await this.userService.actiivateUser(activationDto, context.res);
     }
 };
 exports.UsersResolver = UsersResolver;
 __decorate([
     (0, graphql_1.Mutation)(() => users_types_1.RegisterResponse),
-    __param(0, (0, graphql_1.Args)("registerInput")),
+    __param(0, (0, graphql_1.Args)("registerDto")),
     __param(1, (0, graphql_1.Context)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [typeof (_b = typeof user_dto_1.RegisterDto !== "undefined" && user_dto_1.RegisterDto) === "function" ? _b : Object, Object]),
     __metadata("design:returntype", typeof (_c = typeof Promise !== "undefined" && Promise) === "function" ? _c : Object)
 ], UsersResolver.prototype, "register", null);
+__decorate([
+    (0, graphql_1.Mutation)(() => users_types_1.ActivationResponse),
+    __param(0, (0, graphql_1.Args)("activationDto")),
+    __param(1, (0, graphql_1.Context)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [typeof (_d = typeof user_dto_1.ActivationDto !== "undefined" && user_dto_1.ActivationDto) === "function" ? _d : Object, Object]),
+    __metadata("design:returntype", typeof (_e = typeof Promise !== "undefined" && Promise) === "function" ? _e : Object)
+], UsersResolver.prototype, "activateUser", null);
 exports.UsersResolver = UsersResolver = __decorate([
     (0, graphql_1.Resolver)("User"),
     __metadata("design:paramtypes", [typeof (_a = typeof users_service_1.UsersService !== "undefined" && users_service_1.UsersService) === "function" ? _a : Object])
@@ -357,39 +498,102 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var _a, _b, _c;
+var _a, _b, _c, _d;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.UsersService = void 0;
 const common_1 = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
 const config_1 = __webpack_require__(/*! @nestjs/config */ "@nestjs/config");
 const jwt_1 = __webpack_require__(/*! @nestjs/jwt */ "@nestjs/jwt");
 const prisma_service_1 = __webpack_require__(/*! ../../../prisma/prisma.service */ "./prisma/prisma.service.ts");
+const bcrypt = __webpack_require__(/*! bcrypt */ "bcrypt");
+const email_service_1 = __webpack_require__(/*! ./email/email.service */ "./apps/users/src/email/email.service.ts");
 let UsersService = class UsersService {
-    constructor(jwtService, prisma, configService) {
+    constructor(jwtService, prisma, configService, emailService) {
         this.jwtService = jwtService;
         this.prisma = prisma;
         this.configService = configService;
+        this.emailService = emailService;
     }
     async register(registerDto, response) {
-        const { name, email, password } = registerDto;
+        const { name, email, password, phone_number } = registerDto;
         const id = name.toLowerCase().trim();
         const createdAt = new Date();
         const isEmailExists = await this.prisma.user.findUnique({
             where: {
-                email
-            }
+                email,
+            },
         });
         if (isEmailExists) {
             throw new common_1.BadRequestException("User allready exists with this email");
+        }
+        const isPhoneNumberExists = await this.prisma.user.findUnique({
+            where: {
+                phone_number,
+            },
+        });
+        if (isPhoneNumberExists) {
+            throw new common_1.BadRequestException("User allready exists with this phone number");
+        }
+        const hashedPassword = await bcrypt.hash(password, 10);
+        const user = {
+            id,
+            name,
+            password: hashedPassword,
+            email,
+            phone_number,
+            createdAt,
+        };
+        const activationToken = await this.createActivationToken(user);
+        const activationCode = activationToken.activationCode;
+        const activation_token = activationToken.token;
+        await this.emailService.sendMail({
+            email,
+            subject: "Activate your account!",
+            template: "./activation-mail",
+            name,
+            activationCode,
+        });
+        return { activation_token, response };
+    }
+    async createActivationToken(user) {
+        const activationCode = Math.floor(1000 + Math.random() * 9000).toString();
+        const token = this.jwtService.sign({
+            user,
+            activationCode,
+        }, {
+            secret: this.configService.get("ACTIVATION_SECRET"),
+            expiresIn: "5m",
+        });
+        return { token, activationCode };
+    }
+    async actiivateUser(activationDto, response) {
+        const { activationToken, activationCode } = activationDto;
+        const newUser = this.jwtService.verify(activationToken, {
+            secret: this.configService.get("ACTIVATION_SECRET"),
+        });
+        if (newUser.activationCode !== activationCode) {
+            throw new common_1.BadRequestException("Invalid activation code");
+        }
+        const { name, email, password, phone_number } = newUser.user;
+        const id = name.toLowerCase().trim();
+        const createdAt = new Date();
+        const existUser = await this.prisma.user.findUnique({
+            where: {
+                email,
+            },
+        });
+        if (existUser) {
+            throw new common_1.BadRequestException("User already exist with this email!");
         }
         const user = await this.prisma.user.create({
             data: {
                 id,
                 name,
-                password,
                 email,
+                password,
+                phone_number,
                 createdAt
-            }
+            },
         });
         return { user, response };
     }
@@ -405,7 +609,7 @@ let UsersService = class UsersService {
 exports.UsersService = UsersService;
 exports.UsersService = UsersService = __decorate([
     (0, common_1.Injectable)(),
-    __metadata("design:paramtypes", [typeof (_a = typeof jwt_1.JwtService !== "undefined" && jwt_1.JwtService) === "function" ? _a : Object, typeof (_b = typeof prisma_service_1.PrismaService !== "undefined" && prisma_service_1.PrismaService) === "function" ? _b : Object, typeof (_c = typeof config_1.ConfigService !== "undefined" && config_1.ConfigService) === "function" ? _c : Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof jwt_1.JwtService !== "undefined" && jwt_1.JwtService) === "function" ? _a : Object, typeof (_b = typeof prisma_service_1.PrismaService !== "undefined" && prisma_service_1.PrismaService) === "function" ? _b : Object, typeof (_c = typeof config_1.ConfigService !== "undefined" && config_1.ConfigService) === "function" ? _c : Object, typeof (_d = typeof email_service_1.EmailService !== "undefined" && email_service_1.EmailService) === "function" ? _d : Object])
 ], UsersService);
 
 
@@ -438,6 +642,26 @@ exports.PrismaService = PrismaService = __decorate([
     (0, common_1.Injectable)()
 ], PrismaService);
 
+
+/***/ }),
+
+/***/ "@nestjs-modules/mailer":
+/*!*****************************************!*\
+  !*** external "@nestjs-modules/mailer" ***!
+  \*****************************************/
+/***/ ((module) => {
+
+module.exports = require("@nestjs-modules/mailer");
+
+/***/ }),
+
+/***/ "@nestjs-modules/mailer/dist/adapters/ejs.adapter":
+/*!*******************************************************************!*\
+  !*** external "@nestjs-modules/mailer/dist/adapters/ejs.adapter" ***!
+  \*******************************************************************/
+/***/ ((module) => {
+
+module.exports = require("@nestjs-modules/mailer/dist/adapters/ejs.adapter");
 
 /***/ }),
 
@@ -511,6 +735,16 @@ module.exports = require("@prisma/client");
 
 /***/ }),
 
+/***/ "bcrypt":
+/*!*************************!*\
+  !*** external "bcrypt" ***!
+  \*************************/
+/***/ ((module) => {
+
+module.exports = require("bcrypt");
+
+/***/ }),
+
 /***/ "class-validator":
 /*!**********************************!*\
   !*** external "class-validator" ***!
@@ -518,6 +752,16 @@ module.exports = require("@prisma/client");
 /***/ ((module) => {
 
 module.exports = require("class-validator");
+
+/***/ }),
+
+/***/ "path":
+/*!***********************!*\
+  !*** external "path" ***!
+  \***********************/
+/***/ ((module) => {
+
+module.exports = require("path");
 
 /***/ })
 
@@ -559,8 +803,12 @@ var exports = __webpack_exports__;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const core_1 = __webpack_require__(/*! @nestjs/core */ "@nestjs/core");
 const users_module_1 = __webpack_require__(/*! ./users.module */ "./apps/users/src/users.module.ts");
+const path_1 = __webpack_require__(/*! path */ "path");
 async function bootstrap() {
     const app = await core_1.NestFactory.create(users_module_1.UsersModule);
+    app.useStaticAssets((0, path_1.join)(__dirname, "..", "public"));
+    app.setBaseViewsDir((0, path_1.join)(__dirname, "..", "servers/email-templates"));
+    app.setViewEngine("ejs");
     await app.listen(4001);
 }
 bootstrap();
