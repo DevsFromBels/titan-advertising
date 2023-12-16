@@ -30,7 +30,7 @@ export class ActivationResponse {
 
 @ObjectType()
 export class LoginResponse {
-  @Field(() => User)
+  @Field(() => User, {nullable: true})
   user: User | any;
 
   @Field({nullable: true})

@@ -14,24 +14,28 @@
         background-color: #fafafa;
         color: #222222;
       }
+
       a {
         color: #000;
-        text-decoration: none;
+        text-decoration: underline;
       }
+
       h1 {
         font-size: 24px;
         font-weight: 700;
         line-height: 1.25;
         text-align: center;
       }
+
       p {
         margin-top: 0;
         margin-bottom: 24px;
       }
+
       table td {
         vertical-align: top;
       }
-      /* Layout */
+
       .email-wrapper {
         max-width: 600px;
         margin: 0 auto;
@@ -50,7 +54,7 @@
         text-align: center;
         font-size: 35px;
       }
-      
+
       .email-body > h2 {
         text-align: center;
         font-size: 32px;
@@ -60,7 +64,7 @@
         background-color: #f6f6f6;
         padding: 24px;
       }
-      /* Buttons */
+
       .button {
         display: inline-block;
         background-color: #0070f3;
@@ -82,8 +86,8 @@
       <div class="email-body">
         <p>Hello <%= name %>,</p>
         <p>
-          Thank you for registering with TITAN. To activate your account,
-          please use the following activation code.
+          Thank you for registering with TITAN. To activate your account, please
+          use the following activation code.
         </p>
         <h1>Your code:</h1>
         <h2><%= activationCode %></h2>
@@ -92,16 +96,16 @@
           minutes.
         </p>
         <p>
-          If you did not register for a TITAN account, please ignore this
-          email.
+          If you did not register for a TITAN account, please ignore this email.
         </p>
       </div>
       <div class="email-footer">
-        <p>
-          If you have any questions, please don't hesitate to contact us at
-          <a href="mailto:zuromr@gmail.com">Contact as with email</a>
-        </p>
-        <a href="https://t.me/sh1woo">Telegram</a>
+        <p>If you have any questions, please don't hesitate to contact us at</p>
+        <div>
+          <a href="mailto:zuromr@gmail.com">Contact us via email</a>
+          <br />
+          <a href="https://t.me/sh1woo">Contact us via telegram</a>
+        </div>
       </div>
     </div>
   </body>

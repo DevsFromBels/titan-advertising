@@ -2,7 +2,7 @@ import { Global, Module } from "@nestjs/common"
 import { EmailService } from "./email.service"
 import { MailerModule } from "@nestjs-modules/mailer"
 import { ConfigService } from "@nestjs/config"
-import { join } from "path"
+import { resolve } from "path"
 import { EjsAdapter } from "@nestjs-modules/mailer/dist/adapters/ejs.adapter"
 
 @Global()
@@ -19,12 +19,12 @@ import { EjsAdapter } from "@nestjs-modules/mailer/dist/adapters/ejs.adapter"
 					},
 				},
 				defaults: {
-					from: "Becodemy",
+					from: "TITAN Finance",
 				},
 				template: {
-					dir: join(
+					dir: resolve(
 						__dirname,
-						"../../../../../../pet/finance-app/servers/email-templates"
+						`${process.cwd()}/email-templates`
 					),
 					adapter: new EjsAdapter(),
 					options: {
