@@ -350,6 +350,14 @@ __decorate([
     __metadata("design:type", Object)
 ], LoginResponse.prototype, "user", void 0);
 __decorate([
+    (0, graphql_1.Field)({ nullable: true }),
+    __metadata("design:type", String)
+], LoginResponse.prototype, "accessToken", void 0);
+__decorate([
+    (0, graphql_1.Field)({ nullable: true }),
+    __metadata("design:type", String)
+], LoginResponse.prototype, "refreshToken", void 0);
+__decorate([
     (0, graphql_1.Field)(() => ErrorType, { nullable: true }),
     __metadata("design:type", ErrorType)
 ], LoginResponse.prototype, "error", void 0);
@@ -434,7 +442,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var _a, _b, _c, _d, _e;
+var _a, _b, _c, _d, _e, _f;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.UsersResolver = void 0;
 const graphql_1 = __webpack_require__(/*! @nestjs/graphql */ "@nestjs/graphql");
@@ -456,6 +464,9 @@ let UsersResolver = class UsersResolver {
     async activateUser(activationDto, context) {
         return await this.userService.actiivateUser(activationDto, context.res);
     }
+    async login(email, password) {
+        return await this.userService.Login({ email, password });
+    }
 };
 exports.UsersResolver = UsersResolver;
 __decorate([
@@ -474,6 +485,14 @@ __decorate([
     __metadata("design:paramtypes", [typeof (_d = typeof user_dto_1.ActivationDto !== "undefined" && user_dto_1.ActivationDto) === "function" ? _d : Object, Object]),
     __metadata("design:returntype", typeof (_e = typeof Promise !== "undefined" && Promise) === "function" ? _e : Object)
 ], UsersResolver.prototype, "activateUser", null);
+__decorate([
+    (0, graphql_1.Mutation)(() => users_types_1.LoginResponse),
+    __param(0, (0, graphql_1.Args)("email")),
+    __param(1, (0, graphql_1.Args)("password")),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, String]),
+    __metadata("design:returntype", typeof (_f = typeof Promise !== "undefined" && Promise) === "function" ? _f : Object)
+], UsersResolver.prototype, "login", null);
 exports.UsersResolver = UsersResolver = __decorate([
     (0, graphql_1.Resolver)("User"),
     __metadata("design:paramtypes", [typeof (_a = typeof users_service_1.UsersService !== "undefined" && users_service_1.UsersService) === "function" ? _a : Object])
@@ -507,6 +526,7 @@ const jwt_1 = __webpack_require__(/*! @nestjs/jwt */ "@nestjs/jwt");
 const prisma_service_1 = __webpack_require__(/*! ../../../prisma/prisma.service */ "./prisma/prisma.service.ts");
 const email_service_1 = __webpack_require__(/*! ./email/email.service */ "./apps/users/src/email/email.service.ts");
 const bcrypt = __webpack_require__(/*! bcrypt */ "bcrypt");
+const sendToken_1 = __webpack_require__(/*! ./utils/sendToken */ "./apps/users/src/utils/sendToken.ts");
 let UsersService = class UsersService {
     constructor(jwtService, prisma, configService, emailService) {
         this.jwtService = jwtService;
@@ -592,18 +612,35 @@ let UsersService = class UsersService {
                 email,
                 password,
                 phone_number,
-                createdAt
+                createdAt,
             },
         });
         return { user, response };
     }
     async Login(loginDto) {
         const { email, password } = loginDto;
-        const user = {
-            email,
-            password,
-        };
-        return user;
+        const user = await this.prisma.user.findUnique({
+            where: {
+                email,
+            },
+        });
+        if (user && (await this.compaprePassword(password, user.password))) {
+            const tokeSender = new sendToken_1.TokenSender(this.configService, this.jwtService);
+            return tokeSender.sendToken(user);
+        }
+        else {
+            return {
+                user: null,
+                accessToken: null,
+                refreshToken: null,
+                error: {
+                    message: "Inavlid email or password",
+                },
+            };
+        }
+    }
+    async compaprePassword(password, hashedPassword) {
+        return await bcrypt.compare(password, hashedPassword);
     }
 };
 exports.UsersService = UsersService;
@@ -611,6 +648,40 @@ exports.UsersService = UsersService = __decorate([
     (0, common_1.Injectable)(),
     __metadata("design:paramtypes", [typeof (_a = typeof jwt_1.JwtService !== "undefined" && jwt_1.JwtService) === "function" ? _a : Object, typeof (_b = typeof prisma_service_1.PrismaService !== "undefined" && prisma_service_1.PrismaService) === "function" ? _b : Object, typeof (_c = typeof config_1.ConfigService !== "undefined" && config_1.ConfigService) === "function" ? _c : Object, typeof (_d = typeof email_service_1.EmailService !== "undefined" && email_service_1.EmailService) === "function" ? _d : Object])
 ], UsersService);
+
+
+/***/ }),
+
+/***/ "./apps/users/src/utils/sendToken.ts":
+/*!*******************************************!*\
+  !*** ./apps/users/src/utils/sendToken.ts ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.TokenSender = void 0;
+class TokenSender {
+    constructor(configService, jwt) {
+        this.configService = configService;
+        this.jwt = jwt;
+    }
+    sendToken(user) {
+        const accessToken = this.jwt.sign({
+            id: user.id,
+        }, {
+            secret: this.configService.get("ACCESS_TOKEN_SECRET"),
+        });
+        const refreshToken = this.jwt.sign({
+            id: user.id,
+        }, {
+            secret: this.configService.get("REFRESH_TOKEN_SECRET"),
+            expiresIn: "7d",
+        });
+        return { user, accessToken, refreshToken };
+    }
+}
+exports.TokenSender = TokenSender;
 
 
 /***/ }),
