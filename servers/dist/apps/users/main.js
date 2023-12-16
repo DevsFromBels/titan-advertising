@@ -127,10 +127,10 @@ exports.EmailModule = EmailModule = __decorate([
                         },
                     },
                     defaults: {
-                        from: "Becodemy",
+                        from: "TITAN Finance",
                     },
                     template: {
-                        dir: (0, path_1.join)(__dirname, "../../../../../../pet/finance-app/servers/email-templates"),
+                        dir: (0, path_1.resolve)(__dirname, `${process.cwd()}/email-templates`),
                         adapter: new ejs_adapter_1.EjsAdapter(),
                         options: {
                             strict: false,
@@ -346,7 +346,7 @@ let LoginResponse = class LoginResponse {
 };
 exports.LoginResponse = LoginResponse;
 __decorate([
-    (0, graphql_1.Field)(() => user_entity_1.User),
+    (0, graphql_1.Field)(() => user_entity_1.User, { nullable: true }),
     __metadata("design:type", Object)
 ], LoginResponse.prototype, "user", void 0);
 __decorate([
