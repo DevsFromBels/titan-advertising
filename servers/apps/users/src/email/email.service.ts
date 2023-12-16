@@ -8,6 +8,7 @@ type mailOptions = {
 	activationCode: string
 	template: string
 }
+
 @Injectable()
 export class EmailService {
 	constructor(private mailSevice: MailerService) {}
