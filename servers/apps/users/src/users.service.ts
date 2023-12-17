@@ -11,7 +11,6 @@ interface UserData {
   name: string;
   email: string;
   password: string;
-  phone_number: number;
 }
 
 @Injectable()
@@ -24,7 +23,7 @@ export class UsersService {
   ) {}
 
   async register(registerDto: RegisterDto, response: Response) {
-    const { name, email, password, phone_number } = registerDto;
+    const { name, email, password } = registerDto;
     const id = name.toLowerCase().trim();
     const createdAt = new Date();
 
@@ -38,18 +37,6 @@ export class UsersService {
       throw new BadRequestException("User allready exists with this email");
     }
 
-    const isPhoneNumberExists = await this.prisma.user.findUnique({
-      where: {
-        phone_number,
-      },
-    });
-
-    if (isPhoneNumberExists) {
-      throw new BadRequestException(
-        "User allready exists with this phone number",
-      );
-    }
-
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const user = {
@@ -57,7 +44,6 @@ export class UsersService {
       name,
       password: hashedPassword,
       email,
-      phone_number,
       createdAt,
     };
 
@@ -107,7 +93,7 @@ export class UsersService {
       throw new BadRequestException("Invalid activation code");
     }
 
-    const { name, email, password, phone_number } = newUser.user;
+    const { name, email, password } = newUser.user;
     const id = name.toLowerCase().trim();
     const createdAt = new Date();
 
@@ -127,7 +113,6 @@ export class UsersService {
         name,
         email,
         password,
-        phone_number,
         createdAt,
       },
     });
@@ -157,6 +142,24 @@ export class UsersService {
         },
       };
     }
+  }
+
+  async getLoggedInUser(req: any) {
+    const user = req.user;
+    const accessToken = req.accesstoken;
+    const refreshToken = req.refreshtoken;
+
+    return { user, refreshToken, accessToken };
+  }
+
+  async Logout(req: any) {
+    req.user = null;
+    req.accesstoken = null;
+    req.refreshtoken = null;
+
+    return {
+      message: "Logged out successfully!",
+    };
   }
 
   async compaprePassword(
