@@ -1,10 +1,10 @@
-import HomeScreen from "@/screens/HomeScreen";
+import React from 'react'
 
-
-export default function Home() {
-  return (
-    <main>
-      <HomeScreen />
-    </main>
-  );
+const Home = () => {
+    return (
+        <main>
+            
+        </main>
+    )
 }
+export default Home

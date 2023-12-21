@@ -1,0 +1,180 @@
+'use client'
+import toast from "react-hot-toast";
+import Modal from "@/shared/components/Modal";
+import OtpInput from 'react-otp-input';
+import { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { REGISTER_USER } from "@/shared/graphql/actions/register.action";
+import { Input } from "@/shared/components/ui/input";
+import { SignUpSchema } from "@/shared/schemas/signUpSchema";
+import { Button } from "@/shared/components/ui/button";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Cross1Icon } from "@radix-ui/react-icons";
+import { z } from 'zod';
+import { ACTIVATE_USER } from "@/shared/graphql/actions/activation.action";
+import type  { Toast } from "react-hot-toast/headless";
+
+const Page = () => {
+  const [ registerMutation, { loading: registerLoading} ] = useMutation(REGISTER_USER);
+  const [ activateMutation, { loading: activateLoading, error} ] = useMutation(ACTIVATE_USER);
+  const [ openDialog, setOpenDialog ] = useState(false);
+  const [ otp, setOtp ] = useState<string>('');
+  const [ email, setEmail ] = useState<string>('');
+
+  type SignUpSchema = z.infer<typeof SignUpSchema>;
+
+  const {
+    register,
+    handleSubmit,
+    formState: {errors, isSubmitting},
+    reset
+  } = useForm<SignUpSchema>({
+    resolver: zodResolver(SignUpSchema)
+  });
+
+  const OTPCompleted = (otp: string) => otp.length !== 4
+
+  const onSubmit = async (data: SignUpSchema) => {
+      try {
+        const response = await  registerMutation({
+          variables: data
+        })
+
+        localStorage.setItem("activation_token", response.data.register.activation_token)
+
+        reset();
+        setOpenDialog(true)
+      } catch (err: any) {
+        toast((t: Toast) => (
+          <div className={'flex items-center gap-10 h-[22px] w-[320px]'}>
+              <span className={'text-sm'}>{err.message}</span>
+              <Button onClick={() => toast.dismiss(t.id)} variant={'outline'}>
+                <Cross1Icon/>
+              </Button>
+          </div>
+        ), {
+          style: {
+            borderRadius: '10px',
+            background: '#333',
+            color: '#fff'
+          }
+        });
+      }
+  }
+
+  const verifyEmailWithOTP =  async () => {
+    try {
+      const activation_token = localStorage.getItem("activation_token");
+
+      const response = await activateMutation({
+        variables: {
+          activationToken: activation_token,
+          activationCode: otp
+        }
+      })
+
+      if(response.data.activateUser.user) {
+        setOpenDialog(false);
+        localStorage.removeItem("activation_token")
+      }
+
+    } catch (err: any) {
+      toast((t: Toast) => (
+        <div className={'flex items-center gap-10 h-[22px] w-[320px]'}>
+          <span className={'text-sm'}>{err.message}</span>
+          <Button onClick={() => toast.dismiss(t.id)} variant={'outline'}>
+            <Cross1Icon/>
+          </Button>
+        </div>
+      ), {
+        style: {
+          borderRadius: '10px',
+          background: '#333',
+          color: '#fff'
+        }
+      });
+    }
+  }
+
+  return (
+    <div className={'text-center font-medium mt-10'}>
+      <h2>Sign Up</h2>
+      <form className={'w-[400px] m-auto text-center mt-[2%] grid gap-3'} onSubmit={handleSubmit(onSubmit)}>
+        <div>
+          <Input
+            {...register("name")}
+            autoComplete={'off'}
+            placeholder={"Username"}
+            type={"text"}
+          />
+          {errors.name&& (
+            <span className={'m-2 text-sm'}>{errors.name.message}</span>
+          )}
+        </div>
+        <div>
+          <Input
+            {...register("email")}
+            autoComplete={'off'}
+            placeholder={"Email"}
+            type={"email"}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          {errors.email&& (
+            <span className={'m-2 text-sm'}>{errors.email.message}</span>
+          )}
+        </div>
+        <div>
+            <Input
+              {...register("password")}
+              autoComplete={'off'}
+              placeholder={"Password"}
+              type={"password"}
+            />
+          {errors.password && (
+            <span className={' m-2 text-sm'}>{errors.password.message}</span>
+          )}
+        </div>
+        <Button type={'submit'} disabled={registerLoading}>SIgn Up</Button>
+      </form>
+      <Modal
+          openModal={openDialog}
+          setOpenModal={setOpenDialog}
+          title={'Enter email code'}
+          description={`We sand an email to your email: ${email}`}
+          className={'select-none'}
+      >
+        <div className={'m-3'}>
+          <OtpInput
+            inputStyle={{
+              width: '55px',
+              height: '55px',
+              userSelect: 'none'
+            }}
+            value={otp}
+            containerStyle={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              marginTop: '10px',
+              userSelect: 'none',
+              color: "#aaa"
+            }}
+            onChange={setOtp}
+            numInputs={4}
+            renderSeparator={<pre> </pre>}
+            inputType={'number'}
+            renderInput={(props) => <Input unselectable='on' {...props}/>}
+            shouldAutoFocus
+          />
+          </div>
+        <Button
+          onClick={verifyEmailWithOTP}
+          disabled={OTPCompleted(otp) || activateLoading}
+          className={'flex m-auto mt-6'}
+        >Verify</Button>
+      </Modal>
+    </div>
+  );
+};
+export default Page;

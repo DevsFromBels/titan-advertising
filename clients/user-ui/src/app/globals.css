@@ -1,7 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
+::selection {
+  background-color: #00AA00;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -25,7 +39,7 @@
     --ring: 142.1 76.2% 36.3%;
     --radius: 1rem;
   }
- 
+
   .dark {
     --background: 20 14.3% 4.1%;
     --foreground: 0 0% 95%;

@@ -1,29 +1,59 @@
-import type { Metadata } from "next"
-import { Inter, Poppins } from "next/font/google"
-import "./globals.css"
-import { Providers } from "./providers/NextUiProvider"
+import Header from "@/widgets/header";
+import type { Metadata } from 'next'
+import { Inter as FontSans } from "next/font/google"
+import  {cn} from '@/shared/components/ui/utils'
+import NextTopLoader from 'nextjs-toploader';
 
-const poppins = Poppins({
-	subsets: ["latin"],
-	weight: ["400", "500", "600", "700"],
-	variable: "--font-Poppins",
+import './globals.css'
+import {ThemeProvider} from "@/shared/Providers/theme-provider";
+import MainContainerLayout from "@/shared/Layout/main-container-layout";
+import ApolloProviderClient from "@/shared/Providers/ApolloProvider";
+import { Toaster } from "react-hot-toast";
+
+const fontSans = FontSans({
+    subsets: ["latin"],
+    variable: "--font-sans",
 })
 
 export const metadata: Metadata = {
-	title: "TITAN Finance App",
-	description: "TITAN Finance App website",
+  title: 'TITAN Finance',
+  description: 'The finance app to be a TITAN of economics',
 }
 
 export default function RootLayout({
-	children,
+  children,
 }: {
-	children: React.ReactNode
+  children: React.ReactNode
 }) {
-	return (
-		<html lang='en'>
-			<body className={`${poppins.variable}`}>
-				<Providers>{children}</Providers>
-			</body>
-		</html>
-	)
+  return (
+    <html lang="en">
+      <body
+          className={cn(
+              "min-h-screen bg-background font-sans antialiased",
+              fontSans.variable
+          )}
+      >
+      <ApolloProviderClient>
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+        >
+          <NextTopLoader
+            color="#00AA00"
+            initialPosition={0.6}
+            showSpinner={false}
+          />
+            <Header/>
+            <MainContainerLayout>{children}</MainContainerLayout>
+            <Toaster
+              reverseOrder={false}
+              position={'bottom-center'}
+            />
+        </ThemeProvider>
+      </ApolloProviderClient>
+      </body>
+    </html>
+  )
 }
