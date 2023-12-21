@@ -16,6 +16,11 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+:root {
+  --avatar-border-color: #121FCF;
+  --avatar-border-gradient: linear-gradient(to top, #121FCF 0%, #CF1512 100%);
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

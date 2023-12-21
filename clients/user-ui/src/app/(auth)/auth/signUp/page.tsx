@@ -2,18 +2,23 @@
 import toast from "react-hot-toast";
 import Modal from "@/shared/components/Modal";
 import OtpInput from 'react-otp-input';
-import { useState } from "react";
-import { useMutation } from "@apollo/client";
+import React, { useState } from "react";
+import { FetchResult, useMutation } from "@apollo/client";
 import { REGISTER_USER } from "@/shared/graphql/actions/register.action";
 import { Input } from "@/shared/components/ui/input";
-import { SignUpSchema } from "@/shared/schemas/signUpSchema";
 import { Button } from "@/shared/components/ui/button";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Cross1Icon } from "@radix-ui/react-icons";
-import { z } from 'zod';
 import { ACTIVATE_USER } from "@/shared/graphql/actions/activation.action";
+import { OTPCompleted } from "@/features/auth/otp";
 import type  { Toast } from "react-hot-toast/headless";
+import { SignUpSchema as ZodSignUpSchema } from "@/features/auth/register";
+ import { SignUpSchema } from "@/shared/schemas/signUpSchema";
+import { LOGIN_USER } from "@/shared/graphql/actions/login.action";
+import useUser from "@/shared/hooks/useUser";
+import { useRouter } from "next/navigation";
+import Cookies from "js-cookie";
 
 const Page = () => {
   const [ registerMutation, { loading: registerLoading} ] = useMutation(REGISTER_USER);
@@ -21,21 +26,29 @@ const Page = () => {
   const [ openDialog, setOpenDialog ] = useState(false);
   const [ otp, setOtp ] = useState<string>('');
   const [ email, setEmail ] = useState<string>('');
-
-  type SignUpSchema = z.infer<typeof SignUpSchema>;
+  const [ password, setPassword ] = useState<string>('');
+  const { user, loading: asUserLoading} = useUser();
+  const [ Login, { loading } ] = useMutation(LOGIN_USER);
+  const router = useRouter();
 
   const {
     register,
     handleSubmit,
     formState: {errors, isSubmitting},
     reset
-  } = useForm<SignUpSchema>({
+  } = useForm<ZodSignUpSchema>({
     resolver: zodResolver(SignUpSchema)
   });
 
-  const OTPCompleted = (otp: string) => otp.length !== 4
+  if(asUserLoading) {
+    return <h2>Loading...</h2>
+  }
 
-  const onSubmit = async (data: SignUpSchema) => {
+  if(user?.name) {
+    router.push('/')
+  }
+
+  const onSubmit = async (data: ZodSignUpSchema) => {
       try {
         const response = await  registerMutation({
           variables: data
@@ -78,6 +91,19 @@ const Page = () => {
         setOpenDialog(false);
         localStorage.removeItem("activation_token")
       }
+
+      const loginData = {
+        email: email,
+        password: password,
+      };
+      const res: FetchResult<any> = await Login({
+        variables: loginData,
+      });
+
+      Cookies.set("refresh_token", res.data.login.refreshToken);
+      Cookies.set("access_token", res.data.login.accessToken);
+      reset();
+      window.location.reload();
 
     } catch (err: any) {
       toast((t: Toast) => (
@@ -130,6 +156,7 @@ const Page = () => {
               autoComplete={'off'}
               placeholder={"Password"}
               type={"password"}
+              onChange={(e) => setPassword(e.target.value)}
             />
           {errors.password && (
             <span className={' m-2 text-sm'}>{errors.password.message}</span>
@@ -158,11 +185,11 @@ const Page = () => {
               alignItems: "center",
               marginTop: '10px',
               userSelect: 'none',
+              gap: "8px",
               color: "#aaa"
             }}
             onChange={setOtp}
             numInputs={4}
-            renderSeparator={<pre> </pre>}
             inputType={'number'}
             renderInput={(props) => <Input unselectable='on' {...props}/>}
             shouldAutoFocus

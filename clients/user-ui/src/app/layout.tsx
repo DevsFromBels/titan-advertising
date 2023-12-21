@@ -1,8 +1,8 @@
 import Header from "@/widgets/header";
+import NextTopLoader from 'nextjs-toploader';
 import type { Metadata } from 'next'
 import { Inter as FontSans } from "next/font/google"
-import  {cn} from '@/shared/components/ui/utils'
-import NextTopLoader from 'nextjs-toploader';
+import  { cn } from '@/shared/components/ui/utils'
 
 import './globals.css'
 import {ThemeProvider} from "@/shared/Providers/theme-provider";

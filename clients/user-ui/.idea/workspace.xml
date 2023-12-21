@@ -5,29 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfe63d9c-a98c-4769-8dd9-9e3665c26159" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/Providers/theme-provider.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/components/ModeToggle.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bun.lockb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components.json" beforeDir="false" afterPath="$PROJECT_DIR$/components.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/auth/login.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/auth/otp.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/auth/register.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/components/profile-drop-down.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/graphql/actions/get-user.action.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/graphql/actions/login.action.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/hooks/useUser.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/schemas/signInSchema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(auth)/auth/signIn/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(auth)/auth/signIn/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(auth)/auth/signUp/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(auth)/auth/signUp/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/(root)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(root)/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/providers/NextUiProvider.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout/Header.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavItems.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProfileDropDown.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/rechart.example.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/components/ui/button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/card.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/components/ui/utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/HomeScreen.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/style.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/register/otp.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/signout.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/graphql/gql.setup.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/graphql/gql.setup.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../servers/apps/users/src/dto/user.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/apps/users/src/dto/user.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../servers/apps/users/src/guards/auth.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/apps/users/src/guards/auth.guard.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../servers/apps/users/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/apps/users/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../servers/apps/users/src/types/users.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/apps/users/src/types/users.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../servers/apps/users/src/users.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/apps/users/src/users.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../servers/apps/users/src/users.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/apps/users/src/users.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../servers/dist/apps/users/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/dist/apps/users/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../servers/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +42,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -59,24 +64,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/sh1woo/Desktop/pet/finance-app/clients/user-ui",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/Users/sh1woo/Desktop/pet/finance-app/clients/user-ui/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/sh1woo/Desktop/pet/finance-app/clients/user-ui&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/sh1woo/Desktop/pet/finance-app/clients/user-ui/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/shared" />
       <recent name="$PROJECT_DIR$/src/shared/components/ui" />
       <recent name="$PROJECT_DIR$/src/shared/components" />
     </key>
@@ -91,40 +98,23 @@
       <updated>1702838810353</updated>
       <workItem from="1702838811529" duration="3000" />
       <workItem from="1702838821979" duration="8202000" />
+      <workItem from="1703022048524" duration="42857000" />
+      <workItem from="1703191289152" duration="91000" />
+      <workItem from="1703191390432" duration="5158000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="com.github.evgenys91.machinet.common.dslhistory.DslHistoryState">
-    <option name="historyDtoById">
-      <map>
-        <entry key="3ce682">
-          <value>
-            <ChatHistoryModel>
-              <option name="contextFilesPaths">
-                <list>
-                  <option value="$PROJECT_DIR$/src/app/layout.tsx" />
-                </list>
-              </option>
-              <option name="id" value="3ce682" />
-              <option name="initiateTms" value="1703021059182" />
-              <option name="request" value="How to fix the following error:&#10;TS71002: &quot;fontSans&quot; is not a valid Next.js entry export value." />
-              <option name="response" value="" />
-              <option name="responseDescription" value="The error message &quot;TS71002: 'fontSans' is not a valid Next.js entry export value&quot; is indicating that the export value of 'fontSans' is not valid for Next.js. &#10;&#10;To fix this error, you need to modify the export statement for 'fontSans' in the 'layout.tsx' file. Currently, 'fontSans' is exported as a function call to 'FontSans'. However, Next.js requires that the export value be a plain object.&#10;&#10;To resolve this issue, you can modify the 'fontSans' export to directly assign the result of the 'FontSans' function call to a variable. Here's the updated code:&#10;&#10;```tsx&#10;import Header from &quot;@/widgets/header&quot;;&#10;import type { Metadata } from 'next'&#10;import { Inter as FontSans } from &quot;next/font/google&quot;&#10;import  {cn} from '@/shared/components/ui/utils'&#10;&#10;import './globals.css'&#10;&#10;const fontSans = FontSans({&#10;  subsets: [&quot;latin&quot;],&#10;  variable: &quot;--font-sans&quot;,&#10;});&#10;&#10;export const metadata: Metadata = {&#10;  title: 'Create Next App',&#10;  description: 'Generated by create next app',&#10;}&#10;&#10;export default function RootLayout({&#10;  children,&#10;}: {&#10;  children: React.ReactNode&#10;}) {&#10;  return (&#10;    &lt;html lang=&quot;en&quot;&gt;&#10;      &lt;body&#10;        className={cn(&#10;          &quot;min-h-screen bg-background font-sans antialiased&quot;,&#10;          fontSans.variable&#10;        )}&#10;      &gt;&#10;        &lt;Header/&gt;&#10;        {children}&#10;      &lt;/body&gt;&#10;    &lt;/html&gt;&#10;  )&#10;}&#10;```&#10;&#10;By assigning the result of the 'FontSans' function call to the 'fontSans' variable, you ensure that the export value is a plain object, which is valid for Next.js." />
-              <option name="responseFileName" value="" />
-              <option name="responseFilePath" value="" />
-              <option name="responseTms" value="1703021067114" />
-              <option name="usedLocalFilePaths">
-                <list>
-                  <option value="$PROJECT_DIR$/src/app/layout.tsx" />
-                </list>
-              </option>
-            </ChatHistoryModel>
-          </value>
-        </entry>
-      </map>
-    </option>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/features/auth/otp.ts</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
