@@ -659,6 +659,17 @@ let UsersService = class UsersService {
                 email,
             },
         });
+        const existName = await this.prisma.user.findUnique({
+            where: {
+                name,
+            },
+        });
+        if (existName) {
+            throw new common_1.BadRequestException("User already exist with this username!");
+        }
+        if (existName) {
+            throw new common_1.BadRequestException("User already exist with this username!");
+        }
         if (isEmailExists) {
             throw new common_1.BadRequestException("User allready exists with this email");
         }
@@ -704,11 +715,19 @@ let UsersService = class UsersService {
         const { name, email, password } = newUser.user;
         const id = name.toLowerCase().trim();
         const createdAt = new Date();
+        const existName = await this.prisma.user.findUnique({
+            where: {
+                name,
+            }
+        });
         const existUser = await this.prisma.user.findUnique({
             where: {
                 email,
             },
         });
+        if (existName) {
+            throw new common_1.BadRequestException("User already exist with this username!");
+        }
         if (existUser) {
             throw new common_1.BadRequestException("User already exist with this email!");
         }

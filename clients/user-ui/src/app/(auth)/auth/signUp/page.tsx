@@ -76,6 +76,12 @@ const Page = () => {
       }
   }
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      (OTPCompleted(otp) || activateLoading) && verifyEmailWithOTP();
+    }
+  }
+
   const verifyEmailWithOTP =  async () => {
     try {
       const activation_token = localStorage.getItem("activation_token");
@@ -165,6 +171,7 @@ const Page = () => {
         <Button type={'submit'} disabled={registerLoading}>SIgn Up</Button>
       </form>
       <Modal
+          onKeyDown={handleKeyDown}
           openModal={openDialog}
           setOpenModal={setOpenDialog}
           title={'Enter email code'}

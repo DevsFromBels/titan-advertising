@@ -7,9 +7,9 @@
     <list default="true" id="cfe63d9c-a98c-4769-8dd9-9e3665c26159" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/(auth)/auth/signUp/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(auth)/auth/signUp/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/auth/otp.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/otp.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/components/profile-drop-down.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/components/profile-drop-down.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../servers/apps/users/src/users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/apps/users/src/users.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../servers/dist/apps/users/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/dist/apps/users/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../servers/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/prisma/schema.prisma" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +78,7 @@
       <workItem from="1702838821979" duration="8202000" />
       <workItem from="1703022048524" duration="42857000" />
       <workItem from="1703191289152" duration="91000" />
-      <workItem from="1703191390432" duration="12046000" />
+      <workItem from="1703191390432" duration="13678000" />
     </task>
     <servers />
   </component>
@@ -94,5 +94,35 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.github.evgenys91.machinet.common.dslhistory.DslHistoryState">
+    <option name="historyDtoById">
+      <map>
+        <entry key="137b28">
+          <value>
+            <ChatHistoryModel>
+              <option name="contextFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/src/app/(auth)/auth/signUp/page.tsx" />
+                </list>
+              </option>
+              <option name="id" value="137b28" />
+              <option name="initiateTms" value="1703267855518" />
+              <option name="request" value="How to fix the following error:&#10;TS7006: Parameter 'e' implicitly has an 'any' type." />
+              <option name="response" value="" />
+              <option name="responseDescription" value="To fix the TS7006 error, you need to explicitly specify the type for the 'e' parameter in the handleKeyDown function. Here's the modified code:&#10;&#10;```tsx&#10;const handleKeyDown = (e: React.KeyboardEvent&lt;HTMLInputElement&gt;) =&gt; {&#10;  if (e.key === 'Enter') {&#10;    verifyEmailWithOTP();&#10;  }&#10;}&#10;```&#10;&#10;By adding the type annotation `React.KeyboardEvent&lt;HTMLInputElement&gt;`, you are explicitly stating that the 'e' parameter is of type `KeyboardEvent` and is associated with an HTMLInputElement. This will resolve the TS7006 error." />
+              <option name="responseFileName" value="" />
+              <option name="responseFilePath" value="" />
+              <option name="responseTms" value="1703267858239" />
+              <option name="usedLocalFilePaths">
+                <list>
+                  <option value="$PROJECT_DIR$/src/app/(auth)/auth/signUp/page.tsx" />
+                </list>
+              </option>
+            </ChatHistoryModel>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
