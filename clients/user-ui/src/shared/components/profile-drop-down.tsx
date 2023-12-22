@@ -1,6 +1,5 @@
 'use client'
 import React from "react";
-import { Avatar, AvatarFallback } from "@/shared/components/ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -11,10 +10,20 @@ import {
 } from "@/shared/components/ui/dropdown-menu";
 import Avvvatars from 'avvvatars-react'
 import useUser from "@/shared/hooks/useUser";
-import { signOut } from "@/features/auth/signout";
+import {SignOut} from "@/features/auth/sign-out";
+import { useRouter } from "next/navigation";
+
 
 const ProfileDropDown = () => {
   const { user } = useUser();
+  const router = useRouter()
+  const handleLogOut = async () => {
+    await  SignOut();
+  }
+
+  const handleLinkTo = (link: string) => {
+    router.push(link);
+  }
 
   return (
     <DropdownMenu>
@@ -24,10 +33,10 @@ const ProfileDropDown = () => {
       <DropdownMenuContent>
         <DropdownMenuLabel>{user?.name}</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>Profile</DropdownMenuItem>
+        <DropdownMenuItem onClick={() => handleLinkTo(`/profile/${user?.id}`)}>Profile</DropdownMenuItem>
         <DropdownMenuItem>Billing</DropdownMenuItem>
-        <DropdownMenuItem>Subscription</DropdownMenuItem>
-        <DropdownMenuItem onClick={() => signOut()}>Sign Out</DropdownMenuItem>
+        <DropdownMenuItem onClick={() => handleLinkTo('/about')}>About TITAN</DropdownMenuItem>
+        <DropdownMenuItem onClick={ handleLogOut}>Sign Out</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

@@ -17,9 +17,7 @@ export class AuthGuard implements CanActivate {
     private readonly configService: ConfigService,
   ) {}
 
-  async canActivate(
-    context: ExecutionContext,
-  ): Promise<boolean> {
+  async canActivate(context: ExecutionContext): Promise<boolean> {
     const gqlContext = GqlExecutionContext.create(context);
     const { req } = gqlContext.getContext();
 
@@ -55,7 +53,7 @@ export class AuthGuard implements CanActivate {
 
       if (expirationTime < Date.now()) {
         throw new UnauthorizedException(
-          'Please login to access this resource!',
+          "Please login to access this resource!",
         );
       }
 
@@ -68,16 +66,16 @@ export class AuthGuard implements CanActivate {
       const accessToken = this.jwtService.sign(
         { id: user.id },
         {
-          secret: this.configService.get<string>('ACCESS_TOKEN_SECRET'),
-          expiresIn: '5m',
+          secret: this.configService.get<string>("ACCESS_TOKEN_SECRET"),
+          expiresIn: "5m",
         },
       );
 
       const refreshToken = this.jwtService.sign(
         { id: user.id },
         {
-          secret: this.configService.get<string>('REFRESH_TOKEN_SECRET'),
-          expiresIn: '7d',
+          secret: this.configService.get<string>("REFRESH_TOKEN_SECRET"),
+          expiresIn: "7d",
         },
       );
 

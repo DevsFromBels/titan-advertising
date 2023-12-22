@@ -7,7 +7,11 @@ import {
   RegisterResponse,
 } from "./types/users.types";
 import { ActivationDto, RegisterDto } from "./dto/user.dto";
-import { BadGatewayException, BadRequestException, UseGuards } from "@nestjs/common";
+import {
+  BadGatewayException,
+  BadRequestException,
+  UseGuards,
+} from "@nestjs/common";
 import { User } from "./entities/user.entity";
 import { AuthGuard } from "./guards/auth.guard";
 
