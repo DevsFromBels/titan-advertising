@@ -5,25 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfe63d9c-a98c-4769-8dd9-9e3665c26159" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/(root)/about/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/dashboard.page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/default.page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/graphql/actions/logout.action.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(root)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(root)/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[...not_found]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[...not_found]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/auth/signout.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/sign-out.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(auth)/auth/signUp/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(auth)/auth/signUp/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/otp.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/otp.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/shared/components/profile-drop-down.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/components/profile-drop-down.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/graphql/gql.setup.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/graphql/gql.setup.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/hooks/useUser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/hooks/useUser.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../servers/apps/users/src/dto/user.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/apps/users/src/dto/user.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../servers/apps/users/src/guards/auth.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/apps/users/src/guards/auth.guard.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../servers/apps/users/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/apps/users/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../servers/apps/users/src/types/users.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/apps/users/src/types/users.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../servers/apps/users/src/users.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/apps/users/src/users.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../servers/apps/users/src/users.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/apps/users/src/users.resolver.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../servers/dist/apps/users/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/dist/apps/users/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../servers/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +78,7 @@
       <workItem from="1702838821979" duration="8202000" />
       <workItem from="1703022048524" duration="42857000" />
       <workItem from="1703191289152" duration="91000" />
-      <workItem from="1703191390432" duration="10513000" />
+      <workItem from="1703191390432" duration="12046000" />
     </task>
     <servers />
   </component>

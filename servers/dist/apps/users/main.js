@@ -683,7 +683,7 @@ let UsersService = class UsersService {
         return { activation_token, response };
     }
     async createActivationToken(user) {
-        const activationCode = Math.floor(1000 + Math.random() * 9000).toString();
+        const activationCode = Math.floor(100000 + Math.random() * 9000).toString();
         const token = this.jwtService.sign({
             user,
             activationCode,

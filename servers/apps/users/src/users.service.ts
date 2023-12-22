@@ -65,7 +65,7 @@ export class UsersService {
   }
 
   async createActivationToken(user: UserData) {
-    const activationCode = Math.floor(1000 + Math.random() * 9000).toString();
+    const activationCode = Math.floor(100000 + Math.random() * 9000).toString();
 
     const token = this.jwtService.sign(
       {

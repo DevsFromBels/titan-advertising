@@ -12,6 +12,7 @@ import Avvvatars from 'avvvatars-react'
 import useUser from "@/shared/hooks/useUser";
 import {SignOut} from "@/features/auth/sign-out";
 import { useRouter } from "next/navigation";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/shared/components/ui/tooltip";
 
 
 const ProfileDropDown = () => {
@@ -28,7 +29,12 @@ const ProfileDropDown = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
+        <Tooltip>
+          <TooltipTrigger>
             <Avvvatars border={true} borderColor={'var(--avatar-border-gradient)'} size={35} style={'shape'} value={`${user?.name}`} />
+          </TooltipTrigger>
+        <TooltipContent><p>Your Profile</p></TooltipContent>
+        </Tooltip>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuLabel>{user?.name}</DropdownMenuLabel>

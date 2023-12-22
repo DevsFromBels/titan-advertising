@@ -1,1 +1,1 @@
-export  const OTPCompleted = (otp: string) => otp.length !== 4
+export  const OTPCompleted = (otp: string) => otp.length !== 6

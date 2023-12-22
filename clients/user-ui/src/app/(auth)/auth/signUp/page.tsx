@@ -189,7 +189,7 @@ const Page = () => {
               color: "#aaa"
             }}
             onChange={setOtp}
-            numInputs={4}
+            numInputs={6}
             inputType={'number'}
             renderInput={(props) => <Input unselectable='on' {...props}/>}
             shouldAutoFocus
