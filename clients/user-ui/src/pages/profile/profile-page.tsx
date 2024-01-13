@@ -6,18 +6,21 @@ import { notFound } from "next/navigation";
 import { Icon } from '@iconify/react';
 import crownIcon from '@iconify/icons-mdi/crown';
 import {useTranslations} from 'next-intl';
-
+import ProfileNotPublic from "@/pages/profile/profile-not-public";
+import useUser from "@/shared/hooks/useUser";
+import Crowns from "@/shared/components/Crown/crowns";
 
 const ProfilePage = ({ nickname }: { nickname: string }) => {
   const { profile, loading: ProfileLoading, error } = useProfile({ name: nickname });
+  const { user, loading: UserLoading } = useUser();
   const t = useTranslations('Index');
 
-  if (ProfileLoading) {
+  if (ProfileLoading && UserLoading) {
     return  "Loading..."
   }
 
-  if(!profile?.isPublic) {
-    return notFound();
+  if(!profile?.isPublic && !(user?.name === profile?.user.name)) {
+    return <ProfileNotPublic/>
   }
 
   if(error) {
@@ -33,7 +36,7 @@ const ProfilePage = ({ nickname }: { nickname: string }) => {
           </div>
         </div>
           <div>
-            <h1 className={' flex text-xl font-medium py-4 gap-1 items-center text-center'}>{profile?.user.name} {profile.user.role === "User" && <Icon icon={crownIcon}  color={'FFD700'}/>}</h1>
+            <h1 className={' flex text-xl font-medium py-4 gap-1 items-center text-center'}>{profile?.user.name} <Crowns role={profile?.user.role.toLowerCase()}/></h1>
             <div>
               {profile?.info && (
                 <>

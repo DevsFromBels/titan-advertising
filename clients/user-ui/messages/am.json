@@ -38,5 +38,9 @@
   "NotFound": {
     "message": "ይህ ገጽ ሊገኝ አልቻለም።",
     "buttonText": "ወደ ቤት ተመለስ"
+  },
+  "ProfileClosed": {
+    "message": "ይህ መገለጫ ተዘግቷል።",
+    "buttonText": "ወደ ቤት ተመለስ"
   }
 }

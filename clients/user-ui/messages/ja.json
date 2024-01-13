@@ -38,5 +38,9 @@
   "NotFound": {
     "message": "このページは見つかりませんでした。",
     "buttonText": "ホームに戻る"
+  },
+  "ProfileClosed": {
+    "message": "このプロフィールは閉じられています",
+    "buttonText": "ホームに戻る"
   }
 }

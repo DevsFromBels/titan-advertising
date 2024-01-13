@@ -15,6 +15,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "@/shared/components/ui/
 import { Icon } from '@iconify/react';
 import {useTranslations} from 'next-intl';
 import AddToolTip from "@/shared/components/AddToolTip";
+import Crowns from "@/shared/components/Crown/crowns";
 
 const ProfileSheet = () => {
   const { user } = useUser();
@@ -38,7 +39,7 @@ const ProfileSheet = () => {
         </SheetHeader>
         <div className={'my-4 flex items-center gap-3 font-medium'}>
           <Avvvatars border={true} borderColor={'var(--avatar-border-gradient)'} size={35} style={'shape'} value={`${user?.name}`} />
-          <h2 className={'flex gap-1 items-center'}>{user?.name} {user?.role === "User" && <AddToolTip toolTipText={'Premium User'}><Icon icon={crownIcon}  color={'FFD700'}/></AddToolTip>}</h2>
+          <h2 className={'flex gap-1 items-center'}>{user?.name} <AddToolTip toolTipText={'Premium User'}><Crowns role={user?.role.toLowerCase()}/></AddToolTip></h2>
         </div>
         <Separator className={'my-3'}/>
           <div className={'flex gap-2 items-center'}>

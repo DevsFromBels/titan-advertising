@@ -5,66 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfe63d9c-a98c-4769-8dd9-9e3665c26159" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/messages/am.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messages/en.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messages/es.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messages/ja.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messages/ru.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/[locale]/[...not_found]/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/[locale]/[slug]/loading.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/[locale]/[slug]/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/[locale]/[slug]/settings/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/[locale]/not-found.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/navigation.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/i18n.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/middleware.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/profile/profile-page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/settings.page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/components/change-language.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/components/ui/side-bar-button.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/components/welcome.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/graphql/actions/profile/getProfile.action.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/hooks/useProfile.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/ProfileSheet.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/Sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/profile/profile-not-public.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/components/Crown/crowns.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(auth)/auth/signIn/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/(auth)/auth/signIn/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(auth)/auth/signUp/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/(auth)/auth/signUp/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(root)/about/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/(root)/about/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(root)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/(root)/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[...not_found]/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/dashboard.page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/dashboard.page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/default.page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/default.page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/Layout/main-container-layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/Layout/main-container-layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/components/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/components/Modal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/components/ModeToggle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/components/ModeToggle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/components/ui/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/components/ui/utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/graphql/actions/get-user.action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/graphql/actions/get-user.action.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/graphql/actions/login.action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/graphql/actions/login.action.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../servers/apps/gateway/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/apps/gateway/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../servers/apps/gateway/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/apps/gateway/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../servers/apps/users/src/entities/user.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/apps/users/src/entities/user.entity.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../servers/apps/users/src/guards/auth.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/apps/users/src/guards/auth.guard.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../servers/apps/users/src/types/users.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/apps/users/src/types/users.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../servers/apps/users/src/users.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/apps/users/src/users.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../servers/apps/users/src/users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/apps/users/src/users.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../servers/apps/users/test/app.e2e-spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../servers/apps/users/test/jest-e2e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../servers/dist/apps/gateway/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/dist/apps/gateway/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../servers/dist/apps/users/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/dist/apps/users/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../servers/nest-cli.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/nest-cli.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../servers/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../servers/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../servers/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages/am.json" beforeDir="false" afterPath="$PROJECT_DIR$/messages/am.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/messages/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages/es.json" beforeDir="false" afterPath="$PROJECT_DIR$/messages/es.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages/ja.json" beforeDir="false" afterPath="$PROJECT_DIR$/messages/ja.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages/ru.json" beforeDir="false" afterPath="$PROJECT_DIR$/messages/ru.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/profile/profile-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/profile/profile-page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +36,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -114,6 +66,23 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="QodanaHighlightedReportService">
+    <option name="localRunNotPublishedPersistedInfo">
+      <LocalReportPersistedInfo>
+        <option name="path" value="/private/var/folders/rd/gjw_ck051wz3d3jzz4y7z3300000gn/T/qodana_output/qodana.sarif.json" />
+        <option name="reportGuid" value="1190bc32-6bb5-4a46-b77a-770ca50fc416" />
+        <option name="reportName" value="user-ui/qodana/2024-01-13" />
+      </LocalReportPersistedInfo>
+    </option>
+  </component>
+  <component name="QodanaIsSelectedPersistenceService">
+    <option name="selectedOrLoading" value="true" />
+  </component>
+  <component name="QodanaReportsService">
+    <option name="descriptions">
+      <ReportDescription localRun="true" path="/private/var/folders/rd/gjw_ck051wz3d3jzz4y7z3300000gn/T/qodana_output/qodana.sarif.json" reportGuid="1190bc32-6bb5-4a46-b77a-770ca50fc416" reportId="user-ui/qodana/2024-01-13" />
+    </option>
+  </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/pages/profile" />
@@ -138,7 +107,7 @@
       <workItem from="1703191390432" duration="13917000" />
       <workItem from="1703508529332" duration="59518000" />
       <workItem from="1703991735098" duration="1299000" />
-      <workItem from="1705087805250" duration="1467000" />
+      <workItem from="1705087805250" duration="7060000" />
     </task>
     <servers />
   </component>
@@ -160,6 +129,12 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/shared/components/ui/button.tsx</url>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/pages/profile/profile-page.tsx</url>
+          <line>1</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
