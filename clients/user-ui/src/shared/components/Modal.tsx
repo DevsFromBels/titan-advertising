@@ -19,7 +19,7 @@ type TModalType = IModalInterface & {
 const Modal = ({openModal, setOpenModal, title, description, children, ...props}: TModalType) => {
   return (
     <Dialog open={openModal} onOpenChange={setOpenModal}>
-      <DialogContent {...props}>
+      <DialogContent {...props} onInteractOutside={(e) => e.preventDefault()}>
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
           <DialogDescription>{description}</DialogDescription>

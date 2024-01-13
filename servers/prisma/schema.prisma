@@ -18,21 +18,31 @@ enum Role {
 }
 
 model Avatars {
-  id      String @id
-  public  String
+  id      String @id @default(uuid())
+  public  Boolean @default(true)
   url     String
-  user    User @relation(fields: [userId], references: [id])
+  user    User   @relation(fields: [userId], references: [id])
   userId  String @unique
 }
 
-model User {
-  id        String @id 
-  name  String @unique
-  email     String @unique
-  phone_number Float? @unique
-  address   String?
-  password  String
-  avatar    Avatars?
-  role      Role @default(User)
-  createdAt DateTime
+model Profile {
+  userId   String  @id @unique
+  user     User    @relation(fields: [userId], references: [id])
+  info     String? @default("")
+  isPublic Boolean @default(true)
 }
+
+model User {
+  id           String @id 
+  name         String @unique
+  email        String @unique
+  phone_number Float? @unique
+  address      String?
+  password     String
+  avatar       Avatars?
+  profile      Profile? 
+  profileId    String? @unique
+  role         Role @default(User)
+  createdAt    DateTime
+}
+

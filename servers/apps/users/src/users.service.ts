@@ -6,6 +6,7 @@ import { ActivationDto, LoginDto, RegisterDto } from "./dto/user.dto";
 import { EmailService } from "./email/email.service";
 import * as bcrypt from "bcrypt";
 import { TokenSender } from "./utils/sendToken";
+import { data } from "autoprefixer";
 
 interface UserData {
   name: string;
@@ -141,7 +142,23 @@ export class UsersService {
       },
     });
 
-    return { user, response };
+    const profile = await this.prisma.profile.create({
+      data: {
+        info: "",
+        isPublic: true,
+        userId: user.id
+      }
+    })
+
+    const avatar = this.prisma.avatars.create({
+      data: {
+        public: true,
+        url: "",
+        userId: user.id
+      }
+    })
+
+    return { user, response, profile, avatar };
   }
 
   async Login(loginDto: LoginDto) {
@@ -172,6 +189,9 @@ export class UsersService {
     const user = req.user;
     const accessToken = req.accesstoken;
     const refreshToken = req.refreshtoken;
+
+    console.log(accessToken)
+    console.log(refreshToken)
 
     return { user, refreshToken, accessToken };
   }

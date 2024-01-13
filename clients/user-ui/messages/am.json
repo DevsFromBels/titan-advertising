@@ -1,0 +1,42 @@
+{
+  "Header": {
+    "signUp": "ተመዝገቢ",
+    "signIn": "ስግን እን"
+  },
+  "SignUp": {
+    "textFrom": "ተመዝገቢ",
+    "username": "የተጠቃሚ ስም",
+    "email": "ኢሜይል",
+    "password": "የይለፍ ቃል",
+    "btnText": "ተመዝገቢ"
+  },
+  "SignIn": {
+    "textFrom": "ስግን እን",
+    "email": "ኢሜይል",
+    "password": "የይለፍ ቃል",
+    "btnText": "ስግን እን"
+  },
+  "OTP": {
+    "title": "የኢሜል ኮድ ያስገቡ",
+    "desc": "ወደ ኢሜልዎ ኢሜይል እንልካለን፡-",
+    "btn": "አረጋግጥ"
+  },
+  "ProfileSheet": {
+    "title": "አሰሳ",
+    "profile": "የእርስዎ መገለጫ",
+    "settings": "ቅንብሮች",
+    "signOut": "ዛግተ ውጣ",
+    "theme": "ጭብጥ ይምረጡ",
+    "lang": "ቋንቋ"
+  },
+  "ModeToggle": {
+    "light": "ብርሃን",
+    "dark": "ጨለማ",
+    "system": "ስርዓት",
+    "toolTip": "ገጽታ ይምረጡ"
+  },
+  "NotFound": {
+    "message": "ይህ ገጽ ሊገኝ አልቻለም።",
+    "buttonText": "ወደ ቤት ተመለስ"
+  }
+}

@@ -30,12 +30,35 @@ exports.AppModule = AppModule = __decorate([
         imports: [
             graphql_1.GraphQLModule.forRoot({
                 driver: apollo_1.ApolloGatewayDriver,
+                server: {
+                    context: async ({ req }) => {
+                        return req;
+                    },
+                },
                 gateway: {
+                    buildService({ name, url }) {
+                        return new gateway_1.RemoteGraphQLDataSource({
+                            url,
+                            willSendRequest({ request, context }) {
+                                request.http.headers.set('accesstoken', context.headers ? context.headers?.accesstoken : null);
+                                request.http.headers.set('refreshtoken', context.headers ? context.headers?.refreshtoken : null);
+                            }
+                        });
+                    },
                     supergraphSdl: new gateway_1.IntrospectAndCompose({
-                        subgraphs: [],
-                    })
-                }
-            })
+                        subgraphs: [
+                            {
+                                name: "users",
+                                url: "http://localhost:4001/graphql",
+                            },
+                            {
+                                name: "profile",
+                                url: "http://localhost:4002/graphql",
+                            },
+                        ],
+                    }),
+                },
+            }),
         ],
         controllers: [],
         providers: [app_service_1.AppService],
@@ -164,6 +187,10 @@ const core_1 = __webpack_require__(/*! @nestjs/core */ "@nestjs/core");
 const app_module_1 = __webpack_require__(/*! ./app.module */ "./apps/gateway/src/app.module.ts");
 async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
+    app.enableCors({
+        origin: 'http://localhost:3000',
+        credentials: true
+    });
     await app.listen(4000);
 }
 bootstrap();

@@ -3,6 +3,7 @@
 import * as React from "react"
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons"
 import { useTheme } from "next-themes"
+import {useTranslations} from 'next-intl';
 
 import { Button } from "@/shared/components/ui/button"
 import {
@@ -15,10 +16,11 @@ import AddToolTip from "@/shared/components/AddToolTip";
 
 export function ModeToggle() {
     const { setTheme } = useTheme()
+    const t = useTranslations('ModeToggle')
 
     return (
         <DropdownMenu>
-            <AddToolTip toolTipText={'Select a theme'}>
+            <AddToolTip toolTipText={t('toolTip')}>
                 <DropdownMenuTrigger asChild>
                     <Button variant="outline" size="icon">
                         <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
@@ -29,13 +31,13 @@ export function ModeToggle() {
             </AddToolTip>
             <DropdownMenuContent align="end">
                 <DropdownMenuItem onClick={() => setTheme("light")}>
-                    Light
+                    {t('light')}
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => setTheme("dark")}>
-                    Dark
+                    {t('dark')}
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => setTheme("system")}>
-                    System
+                    {t('system')}
                 </DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>

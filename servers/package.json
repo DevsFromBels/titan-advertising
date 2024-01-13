@@ -7,6 +7,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "nest build",
+    "start-micro": "pm2 start ecosystem.config.js",
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
     "start:gateway": "nest start gateway",
     "start": "nest start",

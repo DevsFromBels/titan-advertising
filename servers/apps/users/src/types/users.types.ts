@@ -48,3 +48,4 @@ export class LogoutResponse {
   @Field()
   message: string;
 }
+

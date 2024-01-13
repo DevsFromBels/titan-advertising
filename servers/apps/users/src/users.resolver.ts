@@ -12,7 +12,6 @@ import {
   BadRequestException,
   UseGuards,
 } from "@nestjs/common";
-import { User } from "./entities/user.entity";
 import { AuthGuard } from "./guards/auth.guard";
 
 @Resolver("User")

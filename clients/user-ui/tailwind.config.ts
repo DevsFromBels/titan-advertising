@@ -21,6 +21,9 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },
+      borderColor: {
+        'avatar': 'var(--avatar-border-color)'
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

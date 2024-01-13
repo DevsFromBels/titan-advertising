@@ -1,0 +1,42 @@
+{
+  "Header": {
+    "signUp": "Inscribirse",
+    "signIn": "Iniciar sesión"
+  },
+  "SignUp": {
+    "textFrom": "Inscribirse",
+    "username": "Nombre de usuario",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "btnText": "Inscribirse"
+  },
+  "SignIn": {
+    "textFrom": "Iniciar sesión",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "btnText": "Iniciar sesión"
+  },
+  "OTP": {
+    "title": "Introduce el código de correo electrónico",
+    "desc": "Le enviamos un correo a su correo electrónico:",
+    "btn": "Verificar"
+  },
+  "ProfileSheet": {
+    "title": "Navegación",
+    "profile": "Tu perfil",
+    "settings": "Ajustes",
+    "signOut": "Desconectar",
+    "theme": "Selecciona un tema",
+    "lang": "Idioma"
+  },
+  "ModeToggle": {
+    "light": "Luz",
+    "dark": "Oscuro",
+    "system": "Sistema",
+    "toolTip": "Selecciona un tema"
+  },
+  "NotFound": {
+    "message": "No se pudo encontrar esta página.",
+    "buttonText": "Vuelve a casa"
+  }
+}

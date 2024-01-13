@@ -5,11 +5,66 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfe63d9c-a98c-4769-8dd9-9e3665c26159" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/messages/am.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messages/en.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messages/es.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messages/ja.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messages/ru.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/[locale]/[...not_found]/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/[locale]/[slug]/loading.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/[locale]/[slug]/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/[locale]/[slug]/settings/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/[locale]/not-found.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/navigation.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/i18n.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/middleware.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/profile/profile-page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/settings.page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/components/change-language.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/components/ui/side-bar-button.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/components/welcome.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/graphql/actions/profile/getProfile.action.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/hooks/useProfile.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/widgets/ProfileSheet.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/widgets/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(auth)/auth/signUp/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(auth)/auth/signUp/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(auth)/auth/signIn/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/(auth)/auth/signIn/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(auth)/auth/signUp/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/(auth)/auth/signUp/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(root)/about/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/(root)/about/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(root)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/(root)/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[...not_found]/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/dashboard.page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/dashboard.page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/default.page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/default.page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/Layout/main-container-layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/Layout/main-container-layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/components/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/components/Modal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/components/ModeToggle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/components/ModeToggle.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/components/ui/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/components/ui/utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/graphql/actions/get-user.action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/graphql/actions/get-user.action.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/graphql/actions/login.action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/graphql/actions/login.action.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../servers/apps/gateway/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/apps/gateway/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../servers/apps/gateway/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/apps/gateway/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../servers/apps/users/src/entities/user.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/apps/users/src/entities/user.entity.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../servers/apps/users/src/guards/auth.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/apps/users/src/guards/auth.guard.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../servers/apps/users/src/types/users.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/apps/users/src/types/users.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../servers/apps/users/src/users.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/apps/users/src/users.resolver.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../servers/apps/users/src/users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/apps/users/src/users.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../servers/apps/users/test/app.e2e-spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../servers/apps/users/test/jest-e2e.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../servers/dist/apps/gateway/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/dist/apps/gateway/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../servers/dist/apps/users/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/dist/apps/users/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../servers/nest-cli.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/nest-cli.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../servers/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../servers/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../servers/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../servers/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,9 +116,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/shared" />
-      <recent name="$PROJECT_DIR$/src/shared/components/ui" />
+      <recent name="$PROJECT_DIR$/src/pages/profile" />
+      <recent name="$PROJECT_DIR$/src/app/[locale]" />
+      <recent name="$PROJECT_DIR$/src/widgets" />
       <recent name="$PROJECT_DIR$/src/shared/components" />
+      <recent name="$PROJECT_DIR$/src/shared" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -78,7 +135,10 @@
       <workItem from="1702838821979" duration="8202000" />
       <workItem from="1703022048524" duration="42857000" />
       <workItem from="1703191289152" duration="91000" />
-      <workItem from="1703191390432" duration="13678000" />
+      <workItem from="1703191390432" duration="13917000" />
+      <workItem from="1703508529332" duration="59518000" />
+      <workItem from="1703991735098" duration="1299000" />
+      <workItem from="1705087805250" duration="1467000" />
     </task>
     <servers />
   </component>
@@ -91,6 +151,15 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/features/auth/otp.ts</url>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/widgets/ProfileSheet.tsx</url>
+          <line>1</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/shared/components/ui/button.tsx</url>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -117,6 +186,49 @@
               <option name="usedLocalFilePaths">
                 <list>
                   <option value="$PROJECT_DIR$/src/app/(auth)/auth/signUp/page.tsx" />
+                </list>
+              </option>
+            </ChatHistoryModel>
+          </value>
+        </entry>
+        <entry key="31dd34">
+          <value>
+            <ChatHistoryModel>
+              <option name="id" value="31dd34" />
+              <option name="initiateTms" value="1703893243483" />
+              <option name="request" value="How to fix the following error:&#10;TS2322: Type '{ label: string; value: string; }' is not assignable to type 'GroupedLanguages'.&#10;  Property 'label' is incompatible with index signature.&#10;    Type 'string' is not assignable to type '{ label: string; value: string; }[]'." />
+              <option name="response" value="" />
+              <option name="responseDescription" value="To fix the TS2322 error, you need to update the type definition of the `GroupedLanguages` interface to include an index signature that allows for any string key to be used to access an array of objects with `label` and `value` properties.&#10;&#10;Here's the modified code:&#10;&#10;```tsx&#10;interface GroupedLanguages {&#10;  [letter: string]: { label: string; value: string }[];&#10;}&#10;```&#10;&#10;By adding `{ label: string; value: string }[]` as the type for the index signature, you are specifying that any string key can be used to access an array of objects with `label` and `value` properties. This will resolve the TS2322 error." />
+              <option name="responseFileName" value="" />
+              <option name="responseFilePath" value="" />
+              <option name="responseTms" value="1703893246726" />
+              <option name="usedLocalFilePaths">
+                <list>
+                  <option value="$PROJECT_DIR$/src/shared/components/change-language.tsx" />
+                </list>
+              </option>
+            </ChatHistoryModel>
+          </value>
+        </entry>
+        <entry key="a08569">
+          <value>
+            <ChatHistoryModel>
+              <option name="contextFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/src/shared/components/change-language.tsx" />
+                </list>
+              </option>
+              <option name="id" value="a08569" />
+              <option name="initiateTms" value="1703893051201" />
+              <option name="request" value="How to fix the following error:&#10;TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{}'.&#10;  No index signature with a parameter of type 'string' was found on type '{}'." />
+              <option name="response" value="" />
+              <option name="responseDescription" value="To fix the TS7053 error, you need to add an index signature to the type definition of the object where you are using a string to index it. In this case, you are using the string `firstLetter` to index the `acc` object in the `groupedLanguages` reducer.&#10;&#10;Here's the modified code:&#10;&#10;```tsx&#10;const groupedLanguages: { [key: string]: any[] } = languages.reduce((acc, lang) =&gt; {&#10;  const firstLetter = lang.label[0];&#10;  return {&#10;    ...acc,&#10;    [firstLetter]: [...(acc[firstLetter] || []), lang]&#10;  };&#10;}, {});&#10;```&#10;&#10;By adding the index signature `{ [key: string]: any[] }` to the `groupedLanguages` object, you are allowing it to be indexed by any string key and the value will be an array of any type. This will resolve the TS7053 error." />
+              <option name="responseFileName" value="" />
+              <option name="responseFilePath" value="" />
+              <option name="responseTms" value="1703893055520" />
+              <option name="usedLocalFilePaths">
+                <list>
+                  <option value="$PROJECT_DIR$/src/shared/components/change-language.tsx" />
                 </list>
               </option>
             </ChatHistoryModel>

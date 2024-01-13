@@ -1,0 +1,42 @@
+{
+  "Header": {
+    "signUp": "サインアップ",
+    "signIn": "サインイン"
+  },
+  "SignUp": {
+    "textFrom": "サインアップ",
+    "username": "ユーザー名",
+    "email": "Eメール",
+    "password": "パスワード",
+    "btnText": "サインアップ"
+  },
+  "SignIn": {
+    "textFrom": "サインイン",
+    "email": "Eメール",
+    "password": "パスワード",
+    "btnText": "サインイン"
+  },
+  "OTP": {
+    "title": "メールコードを入力してください",
+    "desc": "あなたのメールアドレスにメールを送信します:",
+    "btn": "確認する"
+  },
+  "ProfileSheet": {
+    "title": "ナビゲーション",
+    "profile": "あなたのプロフィール",
+    "settings": "設定",
+    "signOut": "サインアウト",
+    "theme": "テーマを選択してください",
+    "lang": "言語"
+  },
+  "ModeToggle": {
+    "light": "ライト",
+    "dark": "暗い",
+    "system": "システム",
+    "toolTip": "テーマを選択してください"
+  },
+  "NotFound": {
+    "message": "このページは見つかりませんでした。",
+    "buttonText": "ホームに戻る"
+  }
+}

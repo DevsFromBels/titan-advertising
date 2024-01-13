@@ -205,33 +205,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var _a, _b;
+var _a;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.User = exports.Avatars = void 0;
+exports.User = void 0;
 const graphql_1 = __webpack_require__(/*! @nestjs/graphql */ "@nestjs/graphql");
-let Avatars = class Avatars {
-};
-exports.Avatars = Avatars;
-__decorate([
-    (0, graphql_1.Field)(),
-    __metadata("design:type", String)
-], Avatars.prototype, "id", void 0);
-__decorate([
-    (0, graphql_1.Field)(),
-    __metadata("design:type", String)
-], Avatars.prototype, "public_id", void 0);
-__decorate([
-    (0, graphql_1.Field)(),
-    __metadata("design:type", String)
-], Avatars.prototype, "url", void 0);
-__decorate([
-    (0, graphql_1.Field)(),
-    __metadata("design:type", String)
-], Avatars.prototype, "userId", void 0);
-exports.Avatars = Avatars = __decorate([
-    (0, graphql_1.ObjectType)(),
-    (0, graphql_1.Directive)('@key(fields:"id")')
-], Avatars);
 let User = class User {
 };
 exports.User = User;
@@ -252,10 +229,6 @@ __decorate([
     __metadata("design:type", String)
 ], User.prototype, "password", void 0);
 __decorate([
-    (0, graphql_1.Field)(() => Avatars, { nullable: true }),
-    __metadata("design:type", Avatars)
-], User.prototype, "avatar", void 0);
-__decorate([
     (0, graphql_1.Field)(),
     __metadata("design:type", String)
 ], User.prototype, "role", void 0);
@@ -263,10 +236,6 @@ __decorate([
     (0, graphql_1.Field)(),
     __metadata("design:type", typeof (_a = typeof Date !== "undefined" && Date) === "function" ? _a : Object)
 ], User.prototype, "createdAt", void 0);
-__decorate([
-    (0, graphql_1.Field)(),
-    __metadata("design:type", typeof (_b = typeof Date !== "undefined" && Date) === "function" ? _b : Object)
-], User.prototype, "updatedAt", void 0);
 exports.User = User = __decorate([
     (0, graphql_1.ObjectType)()
 ], User);
@@ -307,6 +276,7 @@ let AuthGuard = class AuthGuard {
     async canActivate(context) {
         const gqlContext = graphql_1.GqlExecutionContext.create(context);
         const { req } = gqlContext.getContext();
+        console.log(req.headers);
         const accessToken = req.headers.accesstoken;
         const refreshToken = req.headers.refreshtoken;
         if (!accessToken || !refreshToken) {
@@ -740,7 +710,21 @@ let UsersService = class UsersService {
                 createdAt,
             },
         });
-        return { user, response };
+        const profile = await this.prisma.profile.create({
+            data: {
+                info: "",
+                isPublic: true,
+                userId: user.id
+            }
+        });
+        const avatar = this.prisma.avatars.create({
+            data: {
+                public: true,
+                url: "",
+                userId: user.id
+            }
+        });
+        return { user, response, profile, avatar };
     }
     async Login(loginDto) {
         const { email, password } = loginDto;
@@ -768,6 +752,8 @@ let UsersService = class UsersService {
         const user = req.user;
         const accessToken = req.accesstoken;
         const refreshToken = req.refreshtoken;
+        console.log(accessToken);
+        console.log(refreshToken);
         return { user, refreshToken, accessToken };
     }
     async Logout(req) {

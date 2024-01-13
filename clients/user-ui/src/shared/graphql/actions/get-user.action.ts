@@ -10,6 +10,7 @@ export const GET_USER: DocumentNode = gql`
                 name
                 email
                 password
+                role
             }
             accessToken
             refreshToken
@@ -32,4 +33,5 @@ interface User {
   name: string
   email: string
   password: string
+  role: string
 }
