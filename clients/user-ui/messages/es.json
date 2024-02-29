@@ -1,46 +1,47 @@
 {
   "Header": {
-    "signUp": "Inscribirse",
-    "signIn": "Iniciar sesión"
+    "signUp": "Registro",
+    "signIn": "Entrar",
+    "Project_Name": "Publicidad de titanio"
   },
   "SignUp": {
-    "textFrom": "Inscribirse",
+    "textFrom": "Registro",
     "username": "Nombre de usuario",
     "email": "Correo electrónico",
     "password": "Contraseña",
-    "btnText": "Inscribirse"
+    "btnText": "Registro"
   },
   "SignIn": {
-    "textFrom": "Iniciar sesión",
+    "textFrom": "Entrar",
     "email": "Correo electrónico",
     "password": "Contraseña",
-    "btnText": "Iniciar sesión"
+    "btnText": "Entrar"
   },
   "OTP": {
     "title": "Introduce el código de correo electrónico",
-    "desc": "Le enviamos un correo a su correo electrónico:",
-    "btn": "Verificar"
+    "desc": "Le enviamos una carta a su correo electrónico:",
+    "btn": "Controlar"
   },
   "ProfileSheet": {
     "title": "Navegación",
     "profile": "Tu perfil",
     "settings": "Ajustes",
-    "signOut": "Desconectar",
-    "theme": "Selecciona un tema",
+    "signOut": "Salida",
+    "theme": "Elija un tema",
     "lang": "Idioma"
   },
   "ModeToggle": {
     "light": "Luz",
     "dark": "Oscuro",
     "system": "Sistema",
-    "toolTip": "Selecciona un tema"
+    "toolTip": "Elija un tema"
   },
   "NotFound": {
     "message": "No se pudo encontrar esta página.",
     "buttonText": "Vuelve a casa"
   },
   "ProfileClosed": {
-    "message": "Este perfil está cerrado.",
+    "message": "Este perfil es privado.",
     "buttonText": "Vuelve a casa"
   }
 }

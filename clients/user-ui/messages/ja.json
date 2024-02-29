@@ -1,46 +1,47 @@
 {
   "Header": {
-    "signUp": "サインアップ",
-    "signIn": "サインイン"
+    "signUp": "登録する",
+    "signIn": "入るには",
+    "Project_Name": "チタン広告"
   },
   "SignUp": {
-    "textFrom": "サインアップ",
+    "textFrom": "登録する",
     "username": "ユーザー名",
     "email": "Eメール",
     "password": "パスワード",
-    "btnText": "サインアップ"
+    "btnText": "登録する"
   },
   "SignIn": {
-    "textFrom": "サインイン",
+    "textFrom": "入るには",
     "email": "Eメール",
     "password": "パスワード",
-    "btnText": "サインイン"
+    "btnText": "入るには"
   },
   "OTP": {
     "title": "メールコードを入力してください",
-    "desc": "あなたのメールアドレスにメールを送信します:",
-    "btn": "確認する"
+    "desc": "あなたのメールアドレスに手紙を送ります:",
+    "btn": "チェック"
   },
   "ProfileSheet": {
     "title": "ナビゲーション",
     "profile": "あなたのプロフィール",
     "settings": "設定",
-    "signOut": "サインアウト",
-    "theme": "テーマを選択してください",
+    "signOut": "出口",
+    "theme": "トピックを選択",
     "lang": "言語"
   },
   "ModeToggle": {
     "light": "ライト",
     "dark": "暗い",
     "system": "システム",
-    "toolTip": "テーマを選択してください"
+    "toolTip": "トピックを選択"
   },
   "NotFound": {
     "message": "このページは見つかりませんでした。",
-    "buttonText": "ホームに戻る"
+    "buttonText": "家に帰ってください"
   },
   "ProfileClosed": {
-    "message": "このプロフィールは閉じられています",
-    "buttonText": "ホームに戻る"
+    "message": "このプロフィールは非公開です",
+    "buttonText": "家に帰ってください"
   }
 }

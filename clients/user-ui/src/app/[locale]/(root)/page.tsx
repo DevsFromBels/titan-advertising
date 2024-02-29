@@ -1,20 +1,26 @@
-'use client'
-import React from 'react'
+"use client";
+import React from "react";
 import useUser from "@/shared/hooks/useUser";
-import DashboardPage from "@/pages/dashboard.page";
-import DefaultPage from "@/pages/default.page";
+import DefaultPage from "@/shared/pages/default.page";
+import dynamic from "next/dynamic";
+
+const DynamicDashboard = dynamic(() => import("@/shared/pages/dashboard.page"), {
+  loading: () => <h2>Loading...</h2>,
+  ssr: false
+})
 
 const Home = () => {
-    const { user, loading } = useUser();
+  const { user, loading } = useUser();
 
-    if(loading) {
-        return <h2>Loading...</h2>
-    }
+  if (loading) {
+    return <h2>Loading...</h2>;
+  }
 
-    if(user) {
-        return <DashboardPage/>
-    }
+  if (user) {
+    return <DynamicDashboard />;
+  }
 
-    return <DefaultPage/>
-}
-export default Home
+  return <DefaultPage />;
+};
+
+export default Home;

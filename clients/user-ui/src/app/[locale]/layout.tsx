@@ -1,68 +1,65 @@
-import Header from "@/widgets/header";
-import NextTopLoader from 'nextjs-toploader';
-import type { Metadata } from 'next'
-import { Inter as FontSans } from "next/font/google"
-import  { cn } from '@/shared/components/ui/utils'
+import type { Metadata } from "next";
+import { Inter as FontSans } from "next/font/google";
+import { cn } from "@/shared/components/ui/utils";
 
-import './globals.css'
-import {ThemeProvider} from "@/shared/Providers/theme-provider";
-import MainContainerLayout from "@/shared/Layout/main-container-layout";
-import ApolloProviderClient from "@/shared/Providers/ApolloProvider";
-import {NextIntlClientProvider, useMessages} from 'next-intl';
+import { ThemeProvider } from "@/shared/Providers/theme-provider";
+import { NextIntlClientProvider, useMessages } from "next-intl";
 import { Toaster } from "react-hot-toast";
 
+import MainContainerLayout from "@/shared/Layout/main-container-layout";
+import ApolloProviderClient from "@/shared/Providers/ApolloProvider";
+import Header from "@/widgets/header";
+import NextTopLoader from "nextjs-toploader";
+import "./globals.css";
+
 const fontSans = FontSans({
-    subsets: ["latin"],
-    variable: "--font-sans",
-})
-
-const locales = ['en', 'de'];
-
-export function generateStaticParams() {
-  return locales.map((locale) => ({locale}));
-}
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
-  title: 'TITAN Finance',
-  description: 'The finance app to be a TITAN of economics',
-}
+  title: "TITAN Finance",
+  description: "The finance app to be a TITAN of economics",
+};
 
-// @ts-ignore
-export default function LocaleLayout({children, params: {locale}}) {
 
+export default function LocaleLayout({
+  children,
+  params: { locale },
+}: {
+  children: React.ReactNode;
+  params: { locale: string };
+}) {
   const messages = useMessages();
 
   return (
-    <html lang={locale}>
-      <body
+    <NextIntlClientProvider locale={locale} messages={messages}>
+      <html lang={locale}>
+        <body
           className={cn(
-              "min-h-screen bg-background font-sans antialiased",
-              fontSans.variable
+            "min-h-screen bg-background font-sans antialiased",
+            fontSans.variable
           )}
-      >
-      <ApolloProviderClient>
-        <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
         >
-          <NextTopLoader
-            color="#00AA00"
-            initialPosition={0.6}
-            showSpinner={false}
-          />
-          <NextIntlClientProvider locale={locale} messages={messages}>
-            <Header/>
-            <MainContainerLayout>{children}</MainContainerLayout>
-            <Toaster
-              reverseOrder={false}
-              position={'bottom-center'}
-            />
-          </NextIntlClientProvider>
-        </ThemeProvider>
-      </ApolloProviderClient>
-      </body>
-    </html>
-  )
+          <ApolloProviderClient>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <NextTopLoader
+                color="#00AA00"
+                initialPosition={0.6}
+                showSpinner={false}
+              />
+              <Header />
+              <MainContainerLayout>{children}</MainContainerLayout>
+              <Toaster reverseOrder={false} position={"bottom-center"} />
+            </ThemeProvider>
+          </ApolloProviderClient>
+        </body>
+      </html>
+    </NextIntlClientProvider>
+  );
 }

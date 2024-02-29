@@ -1,46 +1,47 @@
 {
   "Header": {
-    "signUp": "ተመዝገቢ",
-    "signIn": "ስግን እን"
+    "signUp": "ይመዝገቡ",
+    "signIn": "ለመግባት",
+    "Project_Name": "ቲታኒየም ማስታወቂያ"
   },
   "SignUp": {
-    "textFrom": "ተመዝገቢ",
+    "textFrom": "ይመዝገቡ",
     "username": "የተጠቃሚ ስም",
     "email": "ኢሜይል",
     "password": "የይለፍ ቃል",
-    "btnText": "ተመዝገቢ"
+    "btnText": "ይመዝገቡ"
   },
   "SignIn": {
-    "textFrom": "ስግን እን",
+    "textFrom": "ለመግባት",
     "email": "ኢሜይል",
     "password": "የይለፍ ቃል",
-    "btnText": "ስግን እን"
+    "btnText": "ለመግባት"
   },
   "OTP": {
     "title": "የኢሜል ኮድ ያስገቡ",
-    "desc": "ወደ ኢሜልዎ ኢሜይል እንልካለን፡-",
-    "btn": "አረጋግጥ"
+    "desc": "ወደ ኢሜልዎ ደብዳቤ እንልካለን፡-",
+    "btn": "ይፈትሹ"
   },
   "ProfileSheet": {
     "title": "አሰሳ",
     "profile": "የእርስዎ መገለጫ",
     "settings": "ቅንብሮች",
-    "signOut": "ዛግተ ውጣ",
-    "theme": "ጭብጥ ይምረጡ",
+    "signOut": "ውጣ",
+    "theme": "ርዕስ ይምረጡ",
     "lang": "ቋንቋ"
   },
   "ModeToggle": {
     "light": "ብርሃን",
     "dark": "ጨለማ",
     "system": "ስርዓት",
-    "toolTip": "ገጽታ ይምረጡ"
+    "toolTip": "ርዕስ ይምረጡ"
   },
   "NotFound": {
     "message": "ይህ ገጽ ሊገኝ አልቻለም።",
-    "buttonText": "ወደ ቤት ተመለስ"
+    "buttonText": "ወ ደ እ ቤ ት ተ መ ለ ሱ"
   },
   "ProfileClosed": {
-    "message": "ይህ መገለጫ ተዘግቷል።",
-    "buttonText": "ወደ ቤት ተመለስ"
+    "message": "ይህ መገለጫ የግል ነው።",
+    "buttonText": "ወ ደ እ ቤ ት ተ መ ለ ሱ"
   }
 }

@@ -1,46 +1,47 @@
 {
   "Header": {
-    "signUp": "Sign Up",
-    "signIn": "Sign In"
+    "signUp": "Register",
+    "signIn": "To come in",
+    "Project_Name": "Titan Avertisement"
   },
   "SignUp": {
-    "textFrom": "Sign Up",
+    "textFrom": "Register",
     "username": "Username",
     "email": "Email",
     "password": "Password",
-    "btnText": "Sign Up"
+    "btnText": "Register"
   },
   "SignIn": {
-    "textFrom": "Sign In",
+    "textFrom": "To come in",
     "email": "Email",
     "password": "Password",
-    "btnText": "Sign In"
+    "btnText": "To come in"
   },
   "OTP": {
     "title": "Enter email code",
-    "desc": "We sand an email to your email:",
-    "btn": "Verify"
+    "desc": "We send a letter to your email:",
+    "btn": "Check"
   },
-  "ProfileSheet" : {
+  "ProfileSheet": {
     "title": "Navigation",
-    "profile": "Your Profile",
+    "profile": "Your profile",
     "settings": "Settings",
-    "signOut": "Sign Out",
-    "theme": "Select a Theme",
+    "signOut": "Exit",
+    "theme": "Select a topic",
     "lang": "Language"
   },
   "ModeToggle": {
     "light": "Light",
     "dark": "Dark",
     "system": "System",
-    "toolTip": "Select a theme"
+    "toolTip": "Select a topic"
   },
   "NotFound": {
     "message": "This page could not be found.",
-    "buttonText": "Go back to Home"
+    "buttonText": "Come back home"
   },
   "ProfileClosed": {
-    "message": "This profile is closed",
-    "buttonText": "Go back to Home"
+    "message": "This profile is private",
+    "buttonText": "Come back home"
   }
 }

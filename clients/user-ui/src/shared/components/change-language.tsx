@@ -59,11 +59,12 @@ const languages = [
 
 const groupedLanguages: GroupedLanguages = languages.reduce((acc, lang) => {
   const firstLetter = lang.label[0];
+  
   return {
     ...acc,
     [firstLetter]: [...(acc[firstLetter] || []), lang]
   };
-}, {});
+}, {} as GroupedLanguages);
 
 
 interface ChangeLanguageProps {
@@ -78,7 +79,7 @@ const ChangeLanguage = ({ children } : ChangeLanguageProps) => {
     <Drawer>
       <DrawerTrigger>{children}</DrawerTrigger>
 
-      <DrawerContent>
+      <DrawerContent className="z-[6668]">
 
         <DrawerHeader>
           <DrawerTitle>Select a language</DrawerTitle>

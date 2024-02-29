@@ -1,0 +1,47 @@
+{
+  "Header": {
+    "signUp": "Registrieren",
+    "signIn": "Betreten",
+    "Project_Name": "Titan-Werbung"
+  },
+  "SignUp": {
+    "textFrom": "Registrieren",
+    "username": "Benutzername",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "btnText": "Registrieren"
+  },
+  "SignIn": {
+    "textFrom": "Betreten",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "btnText": "Betreten"
+  },
+  "OTP": {
+    "title": "Geben Sie den E-Mail-Code ein",
+    "desc": "Wir senden einen Brief an Ihre E-Mail:",
+    "btn": "Überprüfen"
+  },
+  "ProfileSheet": {
+    "title": "Navigation",
+    "profile": "Dein Profil",
+    "settings": "Einstellungen",
+    "signOut": "Ausfahrt",
+    "theme": "Wähle ein Thema",
+    "lang": "Sprache"
+  },
+  "ModeToggle": {
+    "light": "Licht",
+    "dark": "Dunkel",
+    "system": "System",
+    "toolTip": "Wähle ein Thema"
+  },
+  "NotFound": {
+    "message": "Diese Seite konnte nicht gefunden werden.",
+    "buttonText": "Nach Hause zurückkehren"
+  },
+  "ProfileClosed": {
+    "message": "Dieses Profil ist privat",
+    "buttonText": "Nach Hause zurückkehren"
+  }
+}

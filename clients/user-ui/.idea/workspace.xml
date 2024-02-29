@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfe63d9c-a98c-4769-8dd9-9e3665c26159" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/profile/profile-not-public.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/components/Crown/crowns.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messages/am.json" beforeDir="false" afterPath="$PROJECT_DIR$/messages/am.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messages/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/messages/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messages/es.json" beforeDir="false" afterPath="$PROJECT_DIR$/messages/es.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messages/ja.json" beforeDir="false" afterPath="$PROJECT_DIR$/messages/ja.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messages/ru.json" beforeDir="false" afterPath="$PROJECT_DIR$/messages/ru.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/profile/profile-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/profile/profile-page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/ProfileSheet.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/ProfileSheet.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,23 +59,6 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="QodanaHighlightedReportService">
-    <option name="localRunNotPublishedPersistedInfo">
-      <LocalReportPersistedInfo>
-        <option name="path" value="/private/var/folders/rd/gjw_ck051wz3d3jzz4y7z3300000gn/T/qodana_output/qodana.sarif.json" />
-        <option name="reportGuid" value="1190bc32-6bb5-4a46-b77a-770ca50fc416" />
-        <option name="reportName" value="user-ui/qodana/2024-01-13" />
-      </LocalReportPersistedInfo>
-    </option>
-  </component>
-  <component name="QodanaIsSelectedPersistenceService">
-    <option name="selectedOrLoading" value="true" />
-  </component>
-  <component name="QodanaReportsService">
-    <option name="descriptions">
-      <ReportDescription localRun="true" path="/private/var/folders/rd/gjw_ck051wz3d3jzz4y7z3300000gn/T/qodana_output/qodana.sarif.json" reportGuid="1190bc32-6bb5-4a46-b77a-770ca50fc416" reportId="user-ui/qodana/2024-01-13" />
-    </option>
-  </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/pages/profile" />
@@ -107,7 +83,8 @@
       <workItem from="1703191390432" duration="13917000" />
       <workItem from="1703508529332" duration="59518000" />
       <workItem from="1703991735098" duration="1299000" />
-      <workItem from="1705087805250" duration="7060000" />
+      <workItem from="1705087805250" duration="8463000" />
+      <workItem from="1705697931020" duration="41000" />
     </task>
     <servers />
   </component>
@@ -133,7 +110,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/pages/profile/profile-page.tsx</url>
           <line>1</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
