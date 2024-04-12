@@ -1,0 +1,13 @@
+{
+  "expo": {
+    "schema": "myapp",
+    "name": "mobile-titan-advertisiment",
+    "slug": "mobile-titan-advertisiment",
+    "plugins": [
+      "expo-router"
+    ],
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}
